@@ -1,24 +1,16 @@
 package handling;
 
 import app.RegexPatterns;
-import exception.CommentRemoverException;
-import exception.Error;
 
 public class RegexSelector {
 
-    public static String getRegexByFileType(String fileType) throws CommentRemoverException {
-        return getRegexByFileType(fileType, false, false);
-    }
-
-    public static String getRegexByFileType(String fileType, boolean isSingleLinesEnabled, boolean isMultiLinesEnabled) throws CommentRemoverException {
+    public static String getRegexByFileType(String fileType, boolean isSingleLinesEnabled, boolean isMultiLinesEnabled) {
 
         switch (fileType) {
 
             case "js":
             case "java":
-
-                displayErrorIfAnyLineTypeNotEnabled(isSingleLinesEnabled, isMultiLinesEnabled, Error.ERROR_NO_LINE_SELECTED);
-                return regex(isSingleLinesEnabled, isMultiLinesEnabled);
+                return regexJavaAndJavaScript(isSingleLinesEnabled, isMultiLinesEnabled);
 
             case "properties":
                 return RegexPatterns.getCommentRegexProperties();
@@ -37,13 +29,7 @@ public class RegexSelector {
         return null;
     }
 
-    private static void displayErrorIfAnyLineTypeNotEnabled(boolean isSingleLinesEnabled, boolean isMultiLinesEnabled, String error) throws CommentRemoverException {
-        if (!isSingleLinesEnabled && !isMultiLinesEnabled) {
-            throw new CommentRemoverException(error);
-        }
-    }
-
-    private static String regex(boolean isSingleLinesEnabled, boolean isMultiLinesEnabled) {
+    private static String regexJavaAndJavaScript(boolean isSingleLinesEnabled, boolean isMultiLinesEnabled) {
         return (isSingleLinesEnabled && isMultiLinesEnabled) ? RegexPatterns.getCommentRegexMultiAndSingleLine() :
                 (isSingleLinesEnabled) ? RegexPatterns.getCommentRegexSingleLine() : RegexPatterns.getCommentRegexMultiLine();
     }

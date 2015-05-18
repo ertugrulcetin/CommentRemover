@@ -13,9 +13,9 @@ public final class CommentRemover {
     private boolean removeTodos;
     private boolean removeMultiLines;
     private boolean removeSingleLines;
-    private boolean reformatAfterRemoving;
 
     private String startPath;
+    private String startExternalPath;
     private String[] excludePackagesPaths;
 
     private CommentRemover(CommentRemoveBuilder commentRemoveBuilder) {
@@ -29,8 +29,8 @@ public final class CommentRemover {
         this.removeTodos = commentRemoveBuilder.removeTodos;
         this.removeMultiLines = commentRemoveBuilder.removeMultiLines;
         this.removeSingleLines = commentRemoveBuilder.removeSingleLines;
-        this.reformatAfterRemoving = commentRemoveBuilder.reformatAfterRemoving;
         this.startPath = commentRemoveBuilder.startPath;
+        this.startExternalPath = commentRemoveBuilder.startExternalPath;
         this.excludePackagesPaths = commentRemoveBuilder.excludePackagesPaths;
     }
 
@@ -74,12 +74,12 @@ public final class CommentRemover {
         return removeSingleLines;
     }
 
-    public boolean isReformatAfterRemoving() {
-        return reformatAfterRemoving;
-    }
-
     public String getStartPath() {
         return startPath;
+    }
+
+    public String getStartExternalPath() {
+        return startExternalPath;
     }
 
     public String[] getExcludePackagesPaths() {
@@ -99,10 +99,10 @@ public final class CommentRemover {
         private boolean removeTodos = false;
         private boolean removeMultiLines = false;
         private boolean removeSingleLines = false;
-        private boolean reformatAfterRemoving = false;
 
-        public String startPath = System.getProperty("user.dir");
-        private String[] excludePackagesPaths;
+        private String startPath = null;
+        private String startExternalPath = null;
+        private String[] excludePackagesPaths = null;
 
         public CommentRemoveBuilder removeCSS(boolean removeCSS) {
             this.removeCSS = removeCSS;
@@ -154,13 +154,13 @@ public final class CommentRemover {
             return this;
         }
 
-        public CommentRemoveBuilder reformatAfterRemoving(boolean reformatAfterRemoving) {
-            this.reformatAfterRemoving = reformatAfterRemoving;
+        public CommentRemoveBuilder startPath(String startPath) {
+            this.startPath = startPath;
             return this;
         }
 
-        public CommentRemoveBuilder startPath(String startPath) {
-            this.startPath = startPath;
+        public CommentRemoveBuilder startExternalPath(String externalFullPath) {
+            this.startExternalPath = externalFullPath;
             return this;
         }
 

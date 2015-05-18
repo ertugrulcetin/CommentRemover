@@ -2,8 +2,9 @@ package utility;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.Objects;
 
+
+//TODO Objects.requireNonNull will may implemented again !
 public class CommentUtility {
 
     private static final List<String> SUPPORTED_EXTENSIONS = Arrays.asList("java", "js", "jsp", "html", "css", "xml", "properties");
@@ -16,9 +17,8 @@ public class CommentUtility {
 
     public static String replaceDotWithSlash(String path) {
 
-        Objects.requireNonNull(path);
-
         String pathSeparator = getFileSeparator();
+
         return path.replaceAll("\\.", pathSeparator);
     }
 
@@ -31,15 +31,14 @@ public class CommentUtility {
     }
 
     public static String getPath(String path) {
-
-        Objects.requireNonNull(path);
-
         return getCurrentPath() + getFileSeparator() + replaceDotWithSlash(path);
     }
 
-    public static String[] getPaths(String[] paths) {
+    public static String getExternalPath(String path) {
+        return path;
+    }
 
-        Objects.requireNonNull(paths);
+    public static String[] getPaths(String[] paths) {
 
         String[] pathArray = new String[paths.length];
         for (int i = 0; i < pathArray.length; i++) {
