@@ -1,5 +1,7 @@
 package app;
 
+import java.util.Arrays;
+
 public final class CommentRemover {
 
     private boolean removeCSS;
@@ -18,20 +20,20 @@ public final class CommentRemover {
     private String startExternalPath;
     private String[] excludePackagesPaths;
 
-    private CommentRemover(CommentRemoveBuilder commentRemoveBuilder) {
-        this.removeCSS = commentRemoveBuilder.removeCSS;
-        this.removeHTML = commentRemoveBuilder.removeHTML;
-        this.removeJavaScript = commentRemoveBuilder.removeJavaScript;
-        this.removeXML = commentRemoveBuilder.removeXML;
-        this.removeJSP = commentRemoveBuilder.removeJSP;
-        this.removeJava = commentRemoveBuilder.removeJava;
-        this.removeProperties = commentRemoveBuilder.removeProperties;
-        this.removeTodos = commentRemoveBuilder.removeTodos;
-        this.removeMultiLines = commentRemoveBuilder.removeMultiLines;
-        this.removeSingleLines = commentRemoveBuilder.removeSingleLines;
-        this.startPath = commentRemoveBuilder.startPath;
-        this.startExternalPath = commentRemoveBuilder.startExternalPath;
-        this.excludePackagesPaths = commentRemoveBuilder.excludePackagesPaths;
+    private CommentRemover(CommentRemoverBuilder commentRemoverBuilder) {
+        this.removeCSS = commentRemoverBuilder.removeCSS;
+        this.removeHTML = commentRemoverBuilder.removeHTML;
+        this.removeJavaScript = commentRemoverBuilder.removeJavaScript;
+        this.removeXML = commentRemoverBuilder.removeXML;
+        this.removeJSP = commentRemoverBuilder.removeJSP;
+        this.removeJava = commentRemoverBuilder.removeJava;
+        this.removeProperties = commentRemoverBuilder.removeProperties;
+        this.removeTodos = commentRemoverBuilder.removeTodos;
+        this.removeMultiLines = commentRemoverBuilder.removeMultiLines;
+        this.removeSingleLines = commentRemoverBuilder.removeSingleLines;
+        this.startPath = commentRemoverBuilder.startPath;
+        this.startExternalPath = commentRemoverBuilder.startExternalPath;
+        this.excludePackagesPaths = commentRemoverBuilder.excludePackagesPaths;
     }
 
     public boolean isRemoveCSS() {
@@ -86,7 +88,7 @@ public final class CommentRemover {
         return excludePackagesPaths;
     }
 
-    public static class CommentRemoveBuilder {
+    public static class CommentRemoverBuilder {
 
         private boolean removeCSS = false;
         private boolean removeHTML = false;
@@ -96,7 +98,7 @@ public final class CommentRemover {
         private boolean removeJava = false;
         private boolean removeProperties = false;
 
-        private boolean removeTodos = false;
+        private boolean removeTodos = true;
         private boolean removeMultiLines = false;
         private boolean removeSingleLines = false;
 
@@ -104,67 +106,67 @@ public final class CommentRemover {
         private String startExternalPath = null;
         private String[] excludePackagesPaths = null;
 
-        public CommentRemoveBuilder removeCSS(boolean removeCSS) {
+        public CommentRemoverBuilder removeCSS(boolean removeCSS) {
             this.removeCSS = removeCSS;
             return this;
         }
 
-        public CommentRemoveBuilder removeHTML(boolean removeHTML) {
+        public CommentRemoverBuilder removeHTML(boolean removeHTML) {
             this.removeHTML = removeHTML;
             return this;
         }
 
-        public CommentRemoveBuilder removeJavaScript(boolean removeJavaScript) {
+        public CommentRemoverBuilder removeJavaScript(boolean removeJavaScript) {
             this.removeJavaScript = removeJavaScript;
             return this;
         }
 
-        public CommentRemoveBuilder removeXML(boolean removeXML) {
+        public CommentRemoverBuilder removeXML(boolean removeXML) {
             this.removeXML = removeXML;
             return this;
         }
 
-        public CommentRemoveBuilder removeJSP(boolean removeJSP) {
+        public CommentRemoverBuilder removeJSP(boolean removeJSP) {
             this.removeJSP = removeJSP;
             return this;
         }
 
-        public CommentRemoveBuilder removeJava(boolean removeJava) {
+        public CommentRemoverBuilder removeJava(boolean removeJava) {
             this.removeJava = removeJava;
             return this;
         }
 
-        public CommentRemoveBuilder removeProperties(boolean removeProperties) {
+        public CommentRemoverBuilder removeProperties(boolean removeProperties) {
             this.removeProperties = removeProperties;
             return this;
         }
 
-        public CommentRemoveBuilder removeTodos(boolean removeTodos) {
+        public CommentRemoverBuilder removeTodos(boolean removeTodos) {
             this.removeTodos = removeTodos;
             return this;
         }
 
-        public CommentRemoveBuilder removeMultiLines(boolean removeMultiLines) {
+        public CommentRemoverBuilder removeMultiLines(boolean removeMultiLines) {
             this.removeMultiLines = removeMultiLines;
             return this;
         }
 
-        public CommentRemoveBuilder removeSingleLines(boolean removeSingleLines) {
+        public CommentRemoverBuilder removeSingleLines(boolean removeSingleLines) {
             this.removeSingleLines = removeSingleLines;
             return this;
         }
 
-        public CommentRemoveBuilder startPath(String startPath) {
+        public CommentRemoverBuilder startPath(String startPath) {
             this.startPath = startPath;
             return this;
         }
 
-        public CommentRemoveBuilder startExternalPath(String externalFullPath) {
+        public CommentRemoverBuilder startExternalPath(String externalFullPath) {
             this.startExternalPath = externalFullPath;
             return this;
         }
 
-        public CommentRemoveBuilder setExcludePackagesPaths(String[] excludePackagesPaths) {
+        public CommentRemoverBuilder setExcludePackagesPaths(String[] excludePackagesPaths) {
             this.excludePackagesPaths = excludePackagesPaths;
             return this;
         }
@@ -172,5 +174,24 @@ public final class CommentRemover {
         public CommentRemover build() {
             return new CommentRemover(this);
         }
+    }
+
+    @Override
+    public String toString() {
+        return "CommentRemover{" +
+                "removeCSS=" + removeCSS +
+                ", removeHTML=" + removeHTML +
+                ", removeJavaScript=" + removeJavaScript +
+                ", removeXML=" + removeXML +
+                ", removeJSP=" + removeJSP +
+                ", removeJava=" + removeJava +
+                ", removeProperties=" + removeProperties +
+                ", removeTodos=" + removeTodos +
+                ", removeMultiLines=" + removeMultiLines +
+                ", removeSingleLines=" + removeSingleLines +
+                ", startPath='" + startPath + '\'' +
+                ", startExternalPath='" + startExternalPath + '\'' +
+                ", excludePackagesPaths=" + Arrays.toString(excludePackagesPaths) +
+                '}';
     }
 }

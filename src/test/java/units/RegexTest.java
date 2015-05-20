@@ -1,12 +1,8 @@
 package units;
 
 import app.RegexPatterns;
-import exception.CommentRemoverException;
-import handling.FileProcessor;
 import org.junit.Test;
 
-import java.io.File;
-import java.io.IOException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -17,7 +13,7 @@ public class RegexTest {
     @Test
     public void testSingleLineComment() {
 
-        String line = "//Deneme ses";
+        String line = "";
 
         Pattern singleLinePattern = Pattern.compile(RegexPatterns.getCommentRegexSingleLine());
         Matcher matcher = singleLinePattern.matcher(line);
@@ -26,14 +22,14 @@ public class RegexTest {
 
         assertEquals(line, "");
     }
-
+/*
     @Test
     public void testMultiLineComment() throws IOException, CommentRemoverException {
 
         FileProcessor fileProcessor = FileProcessor.getInstance();
         String content = fileProcessor.getFileContent(new File("/Users/ertugrulcetin/IdeaProjects/CommentRemover/src/test/java/dataset/multiline.txt"));
 
-//        System.out.println(content);
+
         Pattern singleLinePattern = Pattern.compile(RegexPatterns.getCommentRegexMultiLine());
         Matcher matcher = singleLinePattern.matcher(content);
 
@@ -51,12 +47,12 @@ public class RegexTest {
         File file = new File("/Users/ertugrulcetin/IdeaProjects/CommentRemover/src/test/java/dataset/multiline.txt");
         String content = fileProcessor.getFileContent(file);
 
-//        System.out.println(content);
+
         Pattern singleLinePattern = Pattern.compile(RegexPatterns.getCommentRegexMultiAndSingleLine());
         Matcher matcher = singleLinePattern.matcher(content);
 
         String newContent = matcher.replaceAll("");
         fileProcessor.setFileContent(file, newContent);
-    }
+    }*/
 
 }

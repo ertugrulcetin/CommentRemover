@@ -4,7 +4,7 @@ public class RegexPatterns {
 
     private static final String COMMENT_REGEX_MULTI_AND_SINGLE_LINE = "(/\\*([^*]|[\\r\\n]|(\\*+([^*/]|[\\r\\n])))*\\*+/|[ \\t]*//.*)";
 
-    private static final String COMMENT_REGEX_MULTI_LINE = "/\\*([^*]|[\\r\\n]|(\\*+([^*/]|[\\r\\n])))*\\*+/";
+    private static final String COMMENT_REGEX_MULTI_LINE = "/\\*([^*]|[\\r\\n]|(\\*+([^*?/]|[\\r\\n])))*\\*+/";
 
     private static final String COMMENT_REGEX_SINGLE_LINE = "([\\t]*//.*)";
 
@@ -13,8 +13,6 @@ public class RegexPatterns {
     private static final String COMMENT_REGEX_HTML_XML = "<!--(?!\\s*(?:\\[if [^\\]]+]|<!|>))(?:(?!-->)(.|\\n))*-->";
 
     private static final String COMMENT_REGEX_JSP = "<%--(?!\\s*(?:\\[if [^\\]]+]|<!|>))(?:(?!-->)(.|\\n))*-->";
-
-    private static final String COMMENT_REGEX_REFORMAT_CODE = "(\\n){3,}";
 
     public static String getCommentRegexMultiAndSingleLine() {
         return COMMENT_REGEX_MULTI_AND_SINGLE_LINE;
@@ -38,9 +36,5 @@ public class RegexPatterns {
 
     public static String getCommentRegexJsp() {
         return COMMENT_REGEX_JSP;
-    }
-
-    public static String getCommentRegexReformatCode() {
-        return COMMENT_REGEX_REFORMAT_CODE;
     }
 }

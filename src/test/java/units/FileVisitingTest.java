@@ -69,7 +69,7 @@ public class FileVisitingTest {
 
                 String currentDirectoryPath = dir.toString();
 
-                String excludePackagePath = CommentUtility.getPath("src.main.java.app");
+                String excludePackagePath = CommentUtility.getStartPathInValidForm("src.main.java.app");
                 if (currentDirectoryPath.equals(excludePackagePath)) {
                     return FileVisitResult.SKIP_SUBTREE;
                 }
@@ -126,7 +126,7 @@ public class FileVisitingTest {
                 }
 
                 String currentDirectoryPath = dir.toString();
-                String[] excludePackagesPaths = CommentUtility.getPaths(new String[]{"src.main.java.app", "src.main.java.exception", "src.test.java"});
+                String[] excludePackagesPaths = CommentUtility.getExcludePackagesPathsInValidForm(new String[]{"src.main.java.app", "src.main.java.exception", "src.test.java"});
                 for (String excludePackagesPath : excludePackagesPaths) {
                     if (currentDirectoryPath.equals(excludePackagesPath)) {
                         return FileVisitResult.SKIP_SUBTREE;

@@ -4,7 +4,6 @@ import java.util.Arrays;
 import java.util.List;
 
 
-//TODO Objects.requireNonNull will may implemented again !
 public class CommentUtility {
 
     private static final List<String> SUPPORTED_EXTENSIONS = Arrays.asList("java", "js", "jsp", "html", "css", "xml", "properties");
@@ -30,19 +29,29 @@ public class CommentUtility {
         return System.getProperty("user.dir");
     }
 
-    public static String getPath(String path) {
+    public static String getStartPathInValidForm(String path) {
         return getCurrentPath() + getFileSeparator() + replaceDotWithSlash(path);
     }
 
-    public static String getExternalPath(String path) {
+    public static String getStartExternalPath(String path) {
         return path;
     }
 
-    public static String[] getPaths(String[] paths) {
+    public static String[] getExcludePackagesPathsInValidForm(String[] paths) {
 
         String[] pathArray = new String[paths.length];
         for (int i = 0; i < pathArray.length; i++) {
             pathArray[i] = getCurrentPath() + getFileSeparator() + replaceDotWithSlash(paths[i]);
+        }
+
+        return pathArray;
+    }
+
+    public static String[] getExcludePackagesPathsInValidFormForExternalPath(String path, String[] paths) {
+
+        String[] pathArray = new String[paths.length];
+        for (int i = 0; i < pathArray.length; i++) {
+            pathArray[i] = path + getFileSeparator() + replaceDotWithSlash(paths[i]);
         }
 
         return pathArray;

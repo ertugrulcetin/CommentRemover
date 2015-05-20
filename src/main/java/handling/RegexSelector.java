@@ -4,6 +4,10 @@ import app.RegexPatterns;
 
 public class RegexSelector {
 
+    public static String getRegexByFileType(String fileType) {
+        return getRegexByFileType(fileType, false, false);
+    }
+
     public static String getRegexByFileType(String fileType, boolean isSingleLinesEnabled, boolean isMultiLinesEnabled) {
 
         switch (fileType) {
