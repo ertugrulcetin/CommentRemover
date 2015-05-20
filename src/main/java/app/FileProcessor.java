@@ -12,6 +12,10 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -21,6 +25,26 @@ public class FileProcessor {
 
     private CommentRemover commentRemover;
     private String currentFilePath;
+
+    private static final Map<String, String> mappingEmptySingleLineCommenToEscapingComment;
+    private static final Map<String, String> mappingFileTypeToSingleComment;
+    private static final List<String> singleLineSupportedFileTypes;
+
+    static {
+        mappingEmptySingleLineCommenToEscapingComment = new HashMap<>();
+        mappingEmptySingleLineCommenToEscapingComment.put("//", "");
+        mappingEmptySingleLineCommenToEscapingComment.put("#", "#!-COMMENT_REMOVER_SINGLE_COMMENT_ESCAPE-!");
+
+        mappingFileTypeToSingleComment = new HashMap<>();
+        mappingFileTypeToSingleComment.put("js", "//");
+        mappingFileTypeToSingleComment.put("java", "//");
+        mappingFileTypeToSingleComment.put("properties", "#");
+
+        singleLineSupportedFileTypes = new LinkedList<>();
+        singleLineSupportedFileTypes.add("js");
+        singleLineSupportedFileTypes.add("java");
+        singleLineSupportedFileTypes.add("properties");
+    }
 
     private FileProcessor() {
     }
@@ -132,22 +156,18 @@ public class FileProcessor {
     private void replaceCommentsWithABlank(String regex) throws IOException, CommentRemoverException {
 
         File file = new File(currentFilePath);
+        String fileType = CommentUtility.getExtension(file.getName());
 
-        StringBuilder fileContent = getFileContent(file);
+        StringBuilder fileContent = getFileContentByFileType(file, fileType);
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(fileContent);
 
-        StringBuilder newContent;
-        if (commentRemover.isRemoveTodos()) {
-            newContent = doRemoveCommentsWithTodos(matcher);
-        } else {
-            newContent = doNotRemoveCommentsWithTodos(fileContent, matcher);
-        }
+        StringBuilder newContent = doRemoveOperation(fileContent, matcher, fileType);
 
         setFileContent(file, newContent.toString());
     }
 
-    private StringBuilder getFileContent(File file) throws IOException, CommentRemoverException {
+    private StringBuilder getFileContentByFileType(File file, String fileType) throws IOException, CommentRemoverException {
 
         long fileSize = file.length();
 
@@ -155,49 +175,83 @@ public class FileProcessor {
             throw new CommentRemoverException("File size so big for scanning !");
         }
 
-        String temp;
         StringBuilder content = new StringBuilder((int) fileSize);
         BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(file), "UTF-8"));
-        while ((temp = br.readLine()) != null) {
-            content.append(temp).append("\n");
+
+        if (singleLineSupportedFileTypes.contains(fileType)) {
+            getSupportingSingleLineContent(br, content, fileType);
+        } else {
+            getNonSupportingSingleLineContent(br, content);
         }
-        br.close();
 
         return content;
     }
 
-    private StringBuilder doRemoveCommentsWithTodos(Matcher matcher) {
+    private void getSupportingSingleLineContent(BufferedReader br, StringBuilder content, String fileType) throws IOException {
+
+        String commentLiteral = mappingFileTypeToSingleComment.get(fileType);
+        String commentEscaped = mappingEmptySingleLineCommenToEscapingComment.get(commentLiteral);
+
+        String temp;
+        while ((temp = br.readLine()) != null) {
+
+            if (temp.trim().equals(commentLiteral)) {
+                content.append(commentEscaped).append("\n");
+            } else {
+                content.append(temp).append("\n");
+            }
+        }
+        br.close();
+    }
+
+    private void getNonSupportingSingleLineContent(BufferedReader br, StringBuilder content) throws IOException {
+
+        String temp;
+        while ((temp = br.readLine()) != null) {
+            content.append(temp).append("\n");
+        }
+        br.close();
+    }
+
+    private StringBuilder doRemoveOperation(StringBuilder fileContent, Matcher matcher, String fileType) {
 
         StringBuilder newContent = null;
         try {
-            newContent = new StringBuilder(matcher.replaceAll(""));
+            String sFileContent = fileContent.toString();
+            boolean isTodosRemoving = commentRemover.isRemoveTodos();
+            while (matcher.find()) {
+
+                String foundToken = matcher.group();
+
+                if (isTodosRemoving) {
+                    if (!isDoubleQuoteToken(foundToken)) {
+                        sFileContent = sFileContent.replaceFirst(Pattern.quote(foundToken), "");
+                    }
+                } else {
+                    if (!isDoubleQuoteToken(foundToken) && !isContainTodo(foundToken)) {
+                        sFileContent = sFileContent.replaceFirst(Pattern.quote(foundToken), "");
+                    }
+                }
+            }
+
+            if (isTodosRemoving && singleLineSupportedFileTypes.contains(fileType)) {
+                String commentLiteral = mappingFileTypeToSingleComment.get(fileType);
+                String commentEscaped = mappingEmptySingleLineCommenToEscapingComment.get(commentLiteral);
+                sFileContent = sFileContent.replace(commentEscaped, "");
+            }
+
+            newContent = new StringBuilder(sFileContent);
+
         } catch (StackOverflowError e) {
-            System.err.println("StackOverflowError:Please increase your stack size! VM option command is: -Xss16m if you need to increase more -Xss{size}m");
+            System.err.println("StackOverflowError:Please increase your stack size! VM option command is: -Xss50m if you need to increase more -Xss{size}m");
             System.exit(0);
         }
 
         return newContent;
     }
 
-    private StringBuilder doNotRemoveCommentsWithTodos(StringBuilder fileContent, Matcher matcher) {
-
-        StringBuilder newContent = null;
-        try {
-            String sFileContent = fileContent.toString();
-            while (matcher.find()) {
-                String foundToken = matcher.group();
-                if (!isContainTodo(foundToken)) {
-                    sFileContent = sFileContent.replace(foundToken, "");
-                }
-            }
-            newContent = new StringBuilder(sFileContent);
-
-        } catch (StackOverflowError e) {
-            System.err.println("StackOverflowError:Please increase your stack size! VM option command is: -Xss16m if you need to increase more -Xss{size}m");
-            System.exit(0);
-        }
-
-        return newContent;
+    private boolean isDoubleQuoteToken(String foundToken) {
+        return foundToken.startsWith("\"");
     }
 
     private boolean isContainTodo(String foundToken) {

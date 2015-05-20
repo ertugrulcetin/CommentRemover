@@ -28,10 +28,16 @@ public class CommentProcessor {
     }
 
     public void start() {
+        displayProcessStarted();
         checkAllStates();
+        displayProcessProgressByDots();
         setFileProcessorContext();
         doProcess();
         displayProcessSuccessfullyDone();
+    }
+
+    private void displayProcessStarted() {
+        System.out.println("PROCESS STARTED...It may take a while(based on your project size).Please be patient :)");
     }
 
     private void checkAllStates() {
@@ -41,6 +47,34 @@ public class CommentProcessor {
             e.printStackTrace();
             System.exit(0);
         }
+    }
+
+    private void displayProcessProgressByDots() {
+
+        new Thread(new Runnable() {
+
+            @Override
+            public void run() {
+
+                int starCount = 0;
+                while(true){
+
+                    if(starCount >= 10){
+                        System.out.println("*\t");
+                        starCount = 0;
+                    }else {
+                        System.out.print("*\t");
+                        starCount++;
+                    }
+
+                    try {
+                        Thread.sleep(350);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        }).start();
     }
 
     private void setFileProcessorContext() {
@@ -142,6 +176,7 @@ public class CommentProcessor {
     }
 
     private void displayProcessSuccessfullyDone() {
-        System.out.println("PROCESS SUCCESSFULLY DONE!");
+        System.out.println("\n\nPROCESS SUCCESSFULLY DONE!");
+
     }
 }

@@ -13,7 +13,7 @@ public class RegexTest {
     @Test
     public void testSingleLineComment() {
 
-        String line = "";
+        String line = "// A note on memory visibility.";
 
         Pattern singleLinePattern = Pattern.compile(RegexPatterns.getCommentRegexSingleLine());
         Matcher matcher = singleLinePattern.matcher(line);
@@ -22,37 +22,40 @@ public class RegexTest {
 
         assertEquals(line, "");
     }
-/*
+
+
     @Test
-    public void testMultiLineComment() throws IOException, CommentRemoverException {
+    public void testDoubleQutoe() {
 
-        FileProcessor fileProcessor = FileProcessor.getInstance();
-        String content = fileProcessor.getFileContent(new File("/Users/ertugrulcetin/IdeaProjects/CommentRemover/src/test/java/dataset/multiline.txt"));
+        String singleLineRegex = RegexPatterns.getCommentRegexSingleLine();
 
+        Pattern pattern = Pattern.compile(singleLineRegex);
+        Matcher matcher = pattern.matcher("file://foo/bar/baz.txt");
 
-        Pattern singleLinePattern = Pattern.compile(RegexPatterns.getCommentRegexMultiLine());
-        Matcher matcher = singleLinePattern.matcher(content);
+        String newregex = "\"([^\"]|\\\\\")*\"";
+        Pattern pattern2 = Pattern.compile(newregex);
+        Matcher matcher2 = pattern2.matcher("file://foo/bar/baz.txt");
 
-        System.out.println("Group Count: " + matcher.groupCount());
-
-        while (matcher.find()) {
-            System.out.println(matcher.group(0));
+        if (matcher.find()) {
+            System.out.println(matcher.group());
+            if (matcher2.find()) {
+                System.out.println(matcher2.group());
+            }
         }
+
     }
 
     @Test
-    public void testSingleAndMultilineTest() throws IOException, CommentRemoverException {
-
-        FileProcessor fileProcessor = FileProcessor.getInstance();
-        File file = new File("/Users/ertugrulcetin/IdeaProjects/CommentRemover/src/test/java/dataset/multiline.txt");
-        String content = fileProcessor.getFileContent(file);
+    public void testMultiAndSingle() {
 
 
-        Pattern singleLinePattern = Pattern.compile(RegexPatterns.getCommentRegexMultiAndSingleLine());
-        Matcher matcher = singleLinePattern.matcher(content);
+        String test = "/* deneme selamlar //kel adam geldi */ //\"deneme\" " + "\n" +
+                "String ertu = \"file://ertucum benim\"";
+        Pattern pattern = Pattern.compile("(/\\*([^*]|[\\r\\n]|(\\*+([^*/]|[\\r\\n])))*\\*+/|[ \\t]*//.*)|\"([^\"]|\\\\\")*\"");
+        Matcher matcher = pattern.matcher(test);
 
-        String newContent = matcher.replaceAll("");
-        fileProcessor.setFileContent(file, newContent);
-    }*/
-
+        while (matcher.find()) {
+            System.out.println(matcher.group());
+        }
+    }
 }

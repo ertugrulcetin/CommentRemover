@@ -5,7 +5,6 @@ import app.CommentRemover;
 import org.junit.Test;
 
 public class ReleaseTest {
-
     @Test
     public void testFirstAttempt() {
 
@@ -28,17 +27,13 @@ public class ReleaseTest {
         s = System.currentTimeMillis();
         CommentRemover commentRemover = new CommentRemover.CommentRemoverBuilder()
                 .removeJava(true)
-                .removeHTML(true)
-                .removeCSS(true)
-                .removeJavaScript(true)
-                .removeJSP(true)
-                .removeXML(true)
                 .removeProperties(true)
                 .removeSingleLines(true)
                 .removeMultiLines(true)
-                .removeTodos(true)
-                .startExternalPath("/Users/ertugrulcetin/Desktop/javaslang-master 2")
-                .startPath("src.main")
+                .removeTodos(false)
+                .startPath(" ")
+//                .startExternalPath("/Users/ertugrulcetin/IdeaProjects/guava")
+                .setExcludePackagesPaths(new String[]{"src.test"})
                 .build();
 
         CommentProcessor commentProcessor = new CommentProcessor(commentRemover);
