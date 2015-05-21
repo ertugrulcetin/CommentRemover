@@ -58,4 +58,29 @@ public class RegexTest {
             System.out.println(matcher.group());
         }
     }
+
+    @Test
+    public void testSingle() {
+
+        String content = "// This benchmark has no concept of \"noWorkToDo\".";
+
+        Pattern pattern = Pattern.compile(RegexPatterns.getCommentRegexSingleLine());
+        Matcher matcher = pattern.matcher(content);
+
+        while(matcher.find()){
+            System.out.println(matcher.group());
+        }
+
+        content = matcher.replaceAll("");
+
+        assertEquals(content,"");
+
+    }
+
+    @Test
+    public void testNestedQuto(){
+        String details = "Hello \"world\"!";
+        details = details.replace("\"","\\\"");
+        System.out.println(details);
+    }
 }

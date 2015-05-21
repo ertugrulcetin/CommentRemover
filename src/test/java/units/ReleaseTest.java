@@ -30,9 +30,13 @@ public class ReleaseTest {
 //                .removeProperties(true)
                 .removeSingleLines(true)
                 .removeMultiLines(true)
-                .removeTodos(false)
+//                .removeTodos(false)
+//                .removeTodos(false)
 //                .startInternalPath(" ")
                 .startExternalPath("/Users/ertugrulcetin/IdeaProjects/guava")
+//                .startExternalPath("/Users/ertugrulcetin/IdeaProjects/guava/guava-tests/benchmark/com/google/common/base")
+//                .startExternalPath("/Users/ertugrulcetin/IdeaProjects/guava/guava/src/com/google/common/html/")
+//                        .startExternalPath("/Users/ertugrulcetin/Desktop/ertucan")
 //                .setExcludePackages(new String[]{"src.test"})
                 .build();
 

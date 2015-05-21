@@ -2,11 +2,11 @@ package app;
 
 public class RegexPatterns {
 
-    private static final String COMMENT_REGEX_MULTI_AND_SINGLE_LINE = "(/\\*([^*]|[\\r\\n]|(\\*+([^*/]|[\\r\\n])))*\\*+/|[ \\t]*//.*)|\"([^\"]|\\\\\")*\"";
+    private static final String COMMENT_REGEX_MULTI_AND_SINGLE_LINE = "(/\\*([^*]|[\\r\\n]|(\\*+([^*/]|[\\r\\n])))*\\*+/|[ \\t]*//.*)|\"(\\\\.|[^\\\\\"])*\"";
 
     private static final String COMMENT_REGEX_MULTI_LINE = "/\\*([^*]|[\\r\\n]|(\\*+([^*?/]|[\\r\\n])))*\\*+/";
 
-    private static final String COMMENT_REGEX_SINGLE_LINE = "([\\t]*//.*)|\"([^\"]|\\\\\")*\"";
+    private static final String COMMENT_REGEX_SINGLE_LINE = "([\\t]*//.*)|\"(\\\\.|[^\\\\\"])*\"";
 
     private static final String COMMENT_REGEX_PROPERTIES = "([\\t]*#.*)";
 
