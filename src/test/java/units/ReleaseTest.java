@@ -38,10 +38,43 @@ public class ReleaseTest {
                 .removeTodos(true)
 //                .startInternalPath(" ")
                 .startExternalPath("/Users/ertugrulcetin/IdeaProjects/guava")
+//                .startExternalPath("/Users/ertugrulcetin/IdeaProjects/elasticsearch")
+//                .startExternalPath("/Users/ertugrulcetin/IdeaProjects/elasticsearch/src/main/java/org/elasticsearch/common")
+//                .startExternalPath("/Users/ertugrulcetin/Downloads/elasticsearch-master")
 //                .startExternalPath("/Users/ertugrulcetin/IdeaProjects/guava/guava-tests/benchmark/com/google/common/base")
 //                .startExternalPath("/Users/ertugrulcetin/IdeaProjects/guava/guava/src/com/google/common/html/")
 //                        .startExternalPath("/Users/ertugrulcetin/Desktop/ertucan")
-//                .setExcludePackages(new String[]{"src.test"})
+                /*.setExcludePackages(new String[]{"blobstore",
+                        "breaker",
+                        "bytes",
+                        "cli",
+                        "collect",
+                        "component",
+                        "compress",
+                        "geo",
+                        "hash",
+                        "inject",
+                        "io",
+                        "jna",
+                        "joda",
+                        "lease",
+                        "logging",
+                        "lucene",
+                        "math",
+                        "metrics",
+                        "netty",
+                        "network",
+//                        "path",
+                        "property",
+                        "recycler",
+                        "regex",
+                        "rounding",
+                        "settings",
+                        "text",
+                        "transport",
+                        "unit",
+                        "util",
+                        "xcontent"})*/
                 .build();
 
         CommentProcessor commentProcessor = new CommentProcessor(commentRemover);

@@ -230,12 +230,15 @@ final class FileProcessor {
             while (matcher.find()) {
 
                 String foundToken = matcher.group();
+
+                if (isDoubleOrSingleQuoteToken(foundToken)) {
+                    continue;
+                }
+
                 if (isTodosRemoving) {
-                    if (!isDoubleQuoteToken(foundToken)) {
-                        sFileContent = sFileContent.replaceFirst(Pattern.quote(foundToken), "");
-                    }
+                    sFileContent = sFileContent.replaceFirst(Pattern.quote(foundToken), "");
                 } else {
-                    if (!isDoubleQuoteToken(foundToken) && !isContainTodo(foundToken)) {
+                    if (!isContainTodo(foundToken)) {
                         sFileContent = sFileContent.replaceFirst(Pattern.quote(foundToken), "");
                     }
                 }
@@ -261,8 +264,8 @@ final class FileProcessor {
         return singleLineSupportedFileTypes.contains(fileType);
     }
 
-    private boolean isDoubleQuoteToken(String foundToken) {
-        return foundToken.startsWith("\"");
+    private boolean isDoubleOrSingleQuoteToken(String foundToken) {
+        return foundToken.startsWith("\"") || foundToken.startsWith("\'");
     }
 
     private boolean isContainTodo(String foundToken) {
