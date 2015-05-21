@@ -194,8 +194,8 @@ final class FileProcessor {
 
         String temp;
         while ((temp = br.readLine()) != null) {
-
-            if (temp.trim().equals(commentSymbol)) {
+            String trimmedTemp = temp.trim();
+            if (trimmedTemp.startsWith(commentSymbol) && !isContainTodo(trimmedTemp)) {
                 content.append(commentEscaped).append("\n");
             } else {
                 content.append(temp).append("\n");
@@ -241,7 +241,7 @@ final class FileProcessor {
                 }
             }
 
-            if (isTodosRemoving && isSingleLineSupportedFileType(fileType)) {
+            if (isSingleLineSupportedFileType(fileType)) {
                 String commentSymbol = getCommentSymbolByFileType(fileType);
                 String commentEscaped = getCommentEscapedByCommentSymbol(commentSymbol);
                 sFileContent = sFileContent.replace(commentEscaped, "");

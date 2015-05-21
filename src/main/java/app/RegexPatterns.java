@@ -8,7 +8,7 @@ public class RegexPatterns {
 
     private static final String COMMENT_REGEX_SINGLE_LINE = "([\\t]*//.*)|\"(\\\\.|[^\\\\\"])*\"";
 
-    private static final String COMMENT_REGEX_PROPERTIES = "([\\t]*#.*)";
+    private static final String COMMENT_REGEX_PROPERTIES = "([\\t]*#.*)|\"(\\\\.|[^\\\\\"])*\"";
 
     private static final String COMMENT_REGEX_HTML_XML = "<!--(?!\\s*(?:\\[if [^\\]]+]|<!|>))(?:(?!-->)(.|\\n))*-->";
 
