@@ -6,7 +6,7 @@ import utility.CommentUtility;
 
 import java.io.File;
 
-public class UserInputHandler {
+ public class UserInputHandler {
 
     private final CommentRemover commentRemover;
 
@@ -47,14 +47,14 @@ public class UserInputHandler {
 
     private void checkStartPathType(CommentRemover commentRemover) throws CommentRemoverException {
 
-        String startPath = commentRemover.getStartPath();
+        String startInternalPath = commentRemover.getStartInternalPath();
         String startExternalPath = commentRemover.getStartExternalPath();
 
-        if (!isSelectedOneTypeStartingPath(startPath, startExternalPath)) {
-            throw new CommentRemoverException("Please select ONLY ONE start path type (startPath or excludeStartPath)!");
+        if (!isSelectedOneTypeStartingPath(startInternalPath, startExternalPath)) {
+            throw new CommentRemoverException("Please select ONLY ONE starting path type (startInternalPath or startExternalPath)!");
         }
 
-        if (startPath != null) {
+        if (startInternalPath != null) {
             checkStartPath(commentRemover);
         } else {
             checkExternalStartPath(commentRemover);
@@ -67,8 +67,8 @@ public class UserInputHandler {
 
     private void checkStartPath(CommentRemover commentRemover) throws CommentRemoverException {
 
-        String startingDirectoryPath = CommentUtility.getStartPathInValidForm(commentRemover.getStartPath());
-        File file = new File(startingDirectoryPath);
+        String startingInternalPath = CommentUtility.getStartInternalPathInValidForm(commentRemover.getStartInternalPath());
+        File file = new File(startingInternalPath);
 
         if (!(file.exists() && file.isDirectory())) {
             throw new CommentRemoverException("Please specify valid directory path! " + file.getAbsolutePath() + " is not a valid directory.");
@@ -77,8 +77,8 @@ public class UserInputHandler {
 
     private void checkExternalStartPath(CommentRemover commentRemover) throws CommentRemoverException {
 
-        String startingExternalDirectoryPath = CommentUtility.getStartExternalPath(commentRemover.getStartExternalPath());
-        File file = new File(startingExternalDirectoryPath);
+        String startingExternalPath = CommentUtility.getStartExternalPathInValidForm(commentRemover.getStartExternalPath());
+        File file = new File(startingExternalPath);
 
         if (!(file.exists() && file.isDirectory())) {
             throw new CommentRemoverException("Please specify valid directory path! " + file.getAbsolutePath() + " is not a valid directory.");
@@ -87,14 +87,14 @@ public class UserInputHandler {
 
     private void checkExcludePackagesPaths(CommentRemover commentRemover) throws CommentRemoverException {
 
-        String[] excludePackagesPaths = commentRemover.getExcludePackagesPaths();
+        String[] excludePackagesPaths = commentRemover.getExcludePackages();
         if (excludePackagesPaths == null) {
             return;
         } else {
-            if (commentRemover.getStartPath() != null) {
-                excludePackagesPaths = CommentUtility.getExcludePackagesPathsInValidForm(excludePackagesPaths);
+            if (commentRemover.getStartInternalPath() != null) {
+                excludePackagesPaths = CommentUtility.getExcludePackagesInValidFormForInternalStarting(excludePackagesPaths);
             } else {
-                excludePackagesPaths = CommentUtility.getExcludePackagesPathsInValidFormForExternalPath(commentRemover.getStartExternalPath(), excludePackagesPaths);
+                excludePackagesPaths = CommentUtility.getExcludePackagesInValidFormForExternalStarting(commentRemover.getStartExternalPath(), excludePackagesPaths);
             }
         }
 

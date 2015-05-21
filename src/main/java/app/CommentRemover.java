@@ -16,9 +16,9 @@ public final class CommentRemover {
     private boolean removeMultiLines;
     private boolean removeSingleLines;
 
-    private String startPath;
+    private String startInternalPath;
     private String startExternalPath;
-    private String[] excludePackagesPaths;
+    private String[] excludePackages;
 
     private CommentRemover(CommentRemoverBuilder commentRemoverBuilder) {
         this.removeCSS = commentRemoverBuilder.removeCSS;
@@ -31,9 +31,9 @@ public final class CommentRemover {
         this.removeTodos = commentRemoverBuilder.removeTodos;
         this.removeMultiLines = commentRemoverBuilder.removeMultiLines;
         this.removeSingleLines = commentRemoverBuilder.removeSingleLines;
-        this.startPath = commentRemoverBuilder.startPath;
+        this.startInternalPath = commentRemoverBuilder.startInternalPath;
         this.startExternalPath = commentRemoverBuilder.startExternalPath;
-        this.excludePackagesPaths = commentRemoverBuilder.excludePackagesPaths;
+        this.excludePackages = commentRemoverBuilder.excludePackages;
     }
 
     public boolean isRemoveCSS() {
@@ -76,16 +76,16 @@ public final class CommentRemover {
         return removeSingleLines;
     }
 
-    public String getStartPath() {
-        return startPath;
+    public String getStartInternalPath() {
+        return startInternalPath;
     }
 
     public String getStartExternalPath() {
         return startExternalPath;
     }
 
-    public String[] getExcludePackagesPaths() {
-        return excludePackagesPaths;
+    public String[] getExcludePackages() {
+        return excludePackages;
     }
 
     public static class CommentRemoverBuilder {
@@ -102,9 +102,9 @@ public final class CommentRemover {
         private boolean removeMultiLines = false;
         private boolean removeSingleLines = false;
 
-        private String startPath = null;
+        private String startInternalPath = null;
         private String startExternalPath = null;
-        private String[] excludePackagesPaths = null;
+        private String[] excludePackages = null;
 
         public CommentRemoverBuilder removeCSS(boolean removeCSS) {
             this.removeCSS = removeCSS;
@@ -156,18 +156,18 @@ public final class CommentRemover {
             return this;
         }
 
-        public CommentRemoverBuilder startPath(String startPath) {
-            this.startPath = startPath;
+        public CommentRemoverBuilder startInternalPath(String startInternalPath) {
+            this.startInternalPath = startInternalPath;
             return this;
         }
 
-        public CommentRemoverBuilder startExternalPath(String externalFullPath) {
-            this.startExternalPath = externalFullPath;
+        public CommentRemoverBuilder startExternalPath(String startExternalFullPath) {
+            this.startExternalPath = startExternalFullPath;
             return this;
         }
 
-        public CommentRemoverBuilder setExcludePackagesPaths(String[] excludePackagesPaths) {
-            this.excludePackagesPaths = excludePackagesPaths;
+        public CommentRemoverBuilder setExcludePackages(String[] excludePackages) {
+            this.excludePackages = excludePackages;
             return this;
         }
 
@@ -189,9 +189,9 @@ public final class CommentRemover {
                 ", removeTodos=" + removeTodos +
                 ", removeMultiLines=" + removeMultiLines +
                 ", removeSingleLines=" + removeSingleLines +
-                ", startPath='" + startPath + '\'' +
+                ", startInternalPath='" + startInternalPath + '\'' +
                 ", startExternalPath='" + startExternalPath + '\'' +
-                ", excludePackagesPaths=" + Arrays.toString(excludePackagesPaths) +
+                ", excludePackages=" + Arrays.toString(excludePackages) +
                 '}';
     }
 }

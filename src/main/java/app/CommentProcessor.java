@@ -11,6 +11,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.SimpleFileVisitor;
 import java.nio.file.attribute.BasicFileAttributes;
+import java.util.Arrays;
 import java.util.List;
 
 
@@ -19,25 +20,27 @@ public class CommentProcessor {
     private final CommentRemover commentRemover;
     private final UserInputHandler userInputHandler;
 
-    private final FileProcessor fileProcessor = FileProcessor.getInstance();
-    private final List<String> supportedExtensions = CommentUtility.getSupportedExtensions();
+    private final FileProcessor fileProcessor;
+    private final List<String> supportedExtensions;
 
     public CommentProcessor(CommentRemover commentRemover) {
         this.commentRemover = commentRemover;
         this.userInputHandler = new UserInputHandler(commentRemover);
+        this.fileProcessor = FileProcessor.getInstance();
+        this.supportedExtensions = Arrays.asList("java", "js", "jsp", "html", "css", "xml", "properties");
     }
 
     public void start() {
-        displayProcessStarted();
         checkAllStates();
+        displayProcessStarted();
         displayProcessProgressByDots();
-        setFileProcessorContext();
+        setFileProcessorCommentRemover();
         doProcess();
         displayProcessSuccessfullyDone();
     }
 
     private void displayProcessStarted() {
-        System.out.println("PROCESS STARTED...It may take a while(based on your project size).Please be patient :)");
+        System.out.println("PROCESS STARTED...It may take a while(based on your project size).Please be patient :)\n");
     }
 
     private void checkAllStates() {
@@ -57,12 +60,12 @@ public class CommentProcessor {
             public void run() {
 
                 int starCount = 0;
-                while(true){
+                while (true) {
 
-                    if(starCount >= 10){
+                    if (starCount >= 10) {
                         System.out.println("*\t");
                         starCount = 0;
-                    }else {
+                    } else {
                         System.out.print("*\t");
                         starCount++;
                     }
@@ -77,7 +80,7 @@ public class CommentProcessor {
         }).start();
     }
 
-    private void setFileProcessorContext() {
+    private void setFileProcessorCommentRemover() {
         fileProcessor.setCommentRemover(commentRemover);
     }
 
@@ -95,13 +98,13 @@ public class CommentProcessor {
                     }
 
 
-                    String[] excludePackagePaths = commentRemover.getExcludePackagesPaths();
+                    String[] excludePackagePaths = commentRemover.getExcludePackages();
                     if (excludePackagePaths != null) {
 
-                        if (isStartPathSelected()) {
-                            excludePackagePaths = CommentUtility.getExcludePackagesPathsInValidForm(excludePackagePaths);
+                        if (isStartInternalPathSelected()) {
+                            excludePackagePaths = CommentUtility.getExcludePackagesInValidFormForInternalStarting(excludePackagePaths);
                         } else {
-                            excludePackagePaths = CommentUtility.getExcludePackagesPathsInValidFormForExternalPath(startingPath.toString(), excludePackagePaths);
+                            excludePackagePaths = CommentUtility.getExcludePackagesInValidFormForExternalStarting(startingPath.toString(), excludePackagePaths);
                         }
 
                         for (String excludePackagePath : excludePackagePaths) {
@@ -157,13 +160,13 @@ public class CommentProcessor {
 
     private String getSelectedStartingPath() {
 
-        String startPath = commentRemover.getStartPath();
+        String startInternalPath = commentRemover.getStartInternalPath();
         String startExternalPath = commentRemover.getStartExternalPath();
 
-        if (startPath != null) {
-            return CommentUtility.getStartPathInValidForm(startPath);
+        if (startInternalPath != null) {
+            return CommentUtility.getStartInternalPathInValidForm(startInternalPath);
         } else {
-            return CommentUtility.getStartExternalPath(startExternalPath);
+            return CommentUtility.getStartExternalPathInValidForm(startExternalPath);
         }
     }
 
@@ -171,12 +174,12 @@ public class CommentProcessor {
         return supportedExtensions.contains(fileExtension);
     }
 
-    private boolean isStartPathSelected() {
-        return commentRemover.getStartPath() != null;
+    private boolean isStartInternalPathSelected() {
+        return commentRemover.getStartInternalPath() != null;
     }
 
     private void displayProcessSuccessfullyDone() {
         System.out.println("\n\nPROCESS SUCCESSFULLY DONE!");
-
+//        System.exit(0);
     }
 }

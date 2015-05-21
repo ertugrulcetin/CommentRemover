@@ -19,21 +19,21 @@ import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class FileProcessor {
+final class FileProcessor {
 
     private static final FileProcessor FILE_PROCESSOR = new FileProcessor();
 
     private CommentRemover commentRemover;
     private String currentFilePath;
 
-    private static final Map<String, String> mappingEmptySingleLineCommenToEscapingComment;
+    private static final Map<String, String> mappingEmptySingleLineCommentToEscapingComment;
     private static final Map<String, String> mappingFileTypeToSingleComment;
     private static final List<String> singleLineSupportedFileTypes;
 
     static {
-        mappingEmptySingleLineCommenToEscapingComment = new HashMap<>();
-        mappingEmptySingleLineCommenToEscapingComment.put("//", "");
-        mappingEmptySingleLineCommenToEscapingComment.put("#", "#!-COMMENT_REMOVER_SINGLE_COMMENT_ESCAPE-!");
+        mappingEmptySingleLineCommentToEscapingComment = new HashMap<>();
+        mappingEmptySingleLineCommentToEscapingComment.put("//", "//!-COMMENT_REMOVER_SINGLE_COMMENT_ESCAPE-!");
+        mappingEmptySingleLineCommentToEscapingComment.put("#", "#!-COMMENT_REMOVER_SINGLE_COMMENT_ESCAPE-!");
 
         mappingFileTypeToSingleComment = new HashMap<>();
         mappingFileTypeToSingleComment.put("js", "//");
@@ -49,19 +49,19 @@ public class FileProcessor {
     private FileProcessor() {
     }
 
-    public static FileProcessor getInstance() {
+    protected static FileProcessor getInstance() {
         return FILE_PROCESSOR;
     }
 
-    public void setCommentRemover(CommentRemover commentRemover) {
+    protected void setCommentRemover(CommentRemover commentRemover) {
         this.commentRemover = commentRemover;
     }
 
-    public void setCurrentFilePath(String currentFilePath) {
+    protected void setCurrentFilePath(String currentFilePath) {
         this.currentFilePath = currentFilePath;
     }
 
-    public void removeComments() throws IOException, CommentRemoverException {
+    protected void removeComments() throws IOException, CommentRemoverException {
 
         String fileExtension = CommentUtility.getExtension(currentFilePath);
 
@@ -157,8 +157,8 @@ public class FileProcessor {
 
         File file = new File(currentFilePath);
         String fileType = CommentUtility.getExtension(file.getName());
-
         StringBuilder fileContent = getFileContentByFileType(file, fileType);
+
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(fileContent);
 
@@ -178,7 +178,7 @@ public class FileProcessor {
         StringBuilder content = new StringBuilder((int) fileSize);
         BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(file), "UTF-8"));
 
-        if (singleLineSupportedFileTypes.contains(fileType)) {
+        if (isSingleLineSupportedFileType(fileType)) {
             getSupportingSingleLineContent(br, content, fileType);
         } else {
             getNonSupportingSingleLineContent(br, content);
@@ -189,19 +189,27 @@ public class FileProcessor {
 
     private void getSupportingSingleLineContent(BufferedReader br, StringBuilder content, String fileType) throws IOException {
 
-        String commentLiteral = mappingFileTypeToSingleComment.get(fileType);
-        String commentEscaped = mappingEmptySingleLineCommenToEscapingComment.get(commentLiteral);
+        String commentSymbol = getCommentSymbolByFileType(fileType);
+        String commentEscaped = getCommentEscapedByCommentSymbol(commentSymbol);
 
         String temp;
         while ((temp = br.readLine()) != null) {
 
-            if (temp.trim().equals(commentLiteral)) {
+            if (temp.trim().equals(commentSymbol)) {
                 content.append(commentEscaped).append("\n");
             } else {
                 content.append(temp).append("\n");
             }
         }
         br.close();
+    }
+
+    private String getCommentSymbolByFileType(String fileType) {
+        return mappingFileTypeToSingleComment.get(fileType);
+    }
+
+    private String getCommentEscapedByCommentSymbol(String commentSymbol) {
+        return mappingEmptySingleLineCommentToEscapingComment.get(commentSymbol);
     }
 
     private void getNonSupportingSingleLineContent(BufferedReader br, StringBuilder content) throws IOException {
@@ -215,14 +223,13 @@ public class FileProcessor {
 
     private StringBuilder doRemoveOperation(StringBuilder fileContent, Matcher matcher, String fileType) {
 
-        StringBuilder newContent = null;
         try {
             String sFileContent = fileContent.toString();
             boolean isTodosRemoving = commentRemover.isRemoveTodos();
+
             while (matcher.find()) {
 
                 String foundToken = matcher.group();
-
                 if (isTodosRemoving) {
                     if (!isDoubleQuoteToken(foundToken)) {
                         sFileContent = sFileContent.replaceFirst(Pattern.quote(foundToken), "");
@@ -234,20 +241,24 @@ public class FileProcessor {
                 }
             }
 
-            if (isTodosRemoving && singleLineSupportedFileTypes.contains(fileType)) {
-                String commentLiteral = mappingFileTypeToSingleComment.get(fileType);
-                String commentEscaped = mappingEmptySingleLineCommenToEscapingComment.get(commentLiteral);
+            if (isTodosRemoving && isSingleLineSupportedFileType(fileType)) {
+                String commentSymbol = getCommentSymbolByFileType(fileType);
+                String commentEscaped = getCommentEscapedByCommentSymbol(commentSymbol);
                 sFileContent = sFileContent.replace(commentEscaped, "");
             }
 
-            newContent = new StringBuilder(sFileContent);
+            fileContent = new StringBuilder(sFileContent);
 
         } catch (StackOverflowError e) {
             System.err.println("StackOverflowError:Please increase your stack size! VM option command is: -Xss50m if you need to increase more -Xss{size}m");
             System.exit(0);
         }
 
-        return newContent;
+        return fileContent;
+    }
+
+    private boolean isSingleLineSupportedFileType(String fileType) {
+        return singleLineSupportedFileTypes.contains(fileType);
     }
 
     private boolean isDoubleQuoteToken(String foundToken) {

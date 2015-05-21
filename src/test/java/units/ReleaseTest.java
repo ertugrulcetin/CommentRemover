@@ -12,8 +12,8 @@ public class ReleaseTest {
                 .removeJava(true)
                 .removeSingleLines(true)
                 .removeMultiLines(true)
-                .startPath("src")
-                .setExcludePackagesPaths(new String[]{"src.main.java.app", "src.main.java.exception"})
+                .startInternalPath("src")
+                .setExcludePackages(new String[]{"src.main.java.app", "src.main.java.exception"})
                 .build();
 
         CommentProcessor commentProcessor = new CommentProcessor(commentRemover);
@@ -27,13 +27,13 @@ public class ReleaseTest {
         s = System.currentTimeMillis();
         CommentRemover commentRemover = new CommentRemover.CommentRemoverBuilder()
                 .removeJava(true)
-                .removeProperties(true)
+//                .removeProperties(true)
                 .removeSingleLines(true)
                 .removeMultiLines(true)
                 .removeTodos(false)
-                .startPath(" ")
-//                .startExternalPath("/Users/ertugrulcetin/IdeaProjects/guava")
-                .setExcludePackagesPaths(new String[]{"src.test"})
+//                .startInternalPath(" ")
+                .startExternalPath("/Users/ertugrulcetin/IdeaProjects/guava")
+//                .setExcludePackages(new String[]{"src.test"})
                 .build();
 
         CommentProcessor commentProcessor = new CommentProcessor(commentRemover);

@@ -1,12 +1,6 @@
 package utility;
 
-import java.util.Arrays;
-import java.util.List;
-
-
 public class CommentUtility {
-
-    private static final List<String> SUPPORTED_EXTENSIONS = Arrays.asList("java", "js", "jsp", "html", "css", "xml", "properties");
 
     private static final char EXTENSION_SEPARATOR = '.';
 
@@ -14,10 +8,12 @@ public class CommentUtility {
 
     private static final char WINDOWS_SEPARATOR = '\\';
 
+    private CommentUtility() {
+    }
+
     public static String replaceDotWithSlash(String path) {
 
         String pathSeparator = getFileSeparator();
-
         return path.replaceAll("\\.", pathSeparator);
     }
 
@@ -29,15 +25,15 @@ public class CommentUtility {
         return System.getProperty("user.dir");
     }
 
-    public static String getStartPathInValidForm(String path) {
+    public static String getStartInternalPathInValidForm(String path) {
         return (getCurrentPath() + getFileSeparator() + replaceDotWithSlash(path)).trim();
     }
 
-    public static String getStartExternalPath(String path) {
-        return path;
+    public static String getStartExternalPathInValidForm(String path) {
+        return path.trim();
     }
 
-    public static String[] getExcludePackagesPathsInValidForm(String[] paths) {
+    public static String[] getExcludePackagesInValidFormForInternalStarting(String[] paths) {
 
         String[] pathArray = new String[paths.length];
         for (int i = 0; i < pathArray.length; i++) {
@@ -47,7 +43,7 @@ public class CommentUtility {
         return pathArray;
     }
 
-    public static String[] getExcludePackagesPathsInValidFormForExternalPath(String path, String[] paths) {
+    public static String[] getExcludePackagesInValidFormForExternalStarting(String path, String[] paths) {
 
         String[] pathArray = new String[paths.length];
         for (int i = 0; i < pathArray.length; i++) {
@@ -93,9 +89,5 @@ public class CommentUtility {
         int lastWindowsPos = filename.lastIndexOf(WINDOWS_SEPARATOR);
 
         return Math.max(lastUnixPos, lastWindowsPos);
-    }
-
-    public static List<String> getSupportedExtensions() {
-        return SUPPORTED_EXTENSIONS;
     }
 }
