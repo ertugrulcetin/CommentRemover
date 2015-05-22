@@ -154,7 +154,7 @@ final class FileProcessor {
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(fileContent);
 
-        StringBuilder newContent = doRemoveOperation(fileContent, matcher, fileType);
+        StringBuilder newContent = doRemoveOperation(fileContent, matcher);
 
         setFileContent(file, newContent.toString());
     }
@@ -213,7 +213,7 @@ final class FileProcessor {
         br.close();
     }
 
-    private StringBuilder doRemoveOperation(StringBuilder fileContent, Matcher matcher, String fileType) {
+    private StringBuilder doRemoveOperation(StringBuilder fileContent, Matcher matcher) {
 
         try {
             String sFileContent = fileContent.toString();
