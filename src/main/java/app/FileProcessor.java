@@ -311,7 +311,7 @@ final class FileProcessor {
     }
 
     private boolean isSingleCommentToken(String foundToken) {
-        return foundToken.startsWith("//") || foundToken.startsWith("#");
+        return foundToken.trim().startsWith("//") || foundToken.trim().startsWith("#");
     }
 
     private boolean isOnlyMultiLineCommentSelected() {
@@ -319,7 +319,7 @@ final class FileProcessor {
     }
 
     private boolean isMultiLineCommentToken(String foundToken) {
-        return foundToken.startsWith("/*");
+        return foundToken.trim().startsWith("/*");
     }
 
     private boolean isSingleLineSupported(String fileType) {
