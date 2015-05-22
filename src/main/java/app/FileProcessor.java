@@ -105,19 +105,19 @@ final class FileProcessor {
 
     private void doJavaScriptOperation() throws IOException, CommentRemoverException {
 
-        String regex = RegexSelector.getRegexByFileType("js", commentRemover.isRemoveSingleLines(), commentRemover.isRemoveMultiLines());
+        String regex = RegexSelector.getRegexByFileType("js");
         replaceCommentsWithABlank(regex);
     }
 
     private void doJavaOperation() throws IOException, CommentRemoverException {
 
-        String regex = RegexSelector.getRegexByFileType("java", commentRemover.isRemoveSingleLines(), commentRemover.isRemoveMultiLines());
+        String regex = RegexSelector.getRegexByFileType("java");
         replaceCommentsWithABlank(regex);
     }
 
     private void doPropertiesOperation() throws IOException, CommentRemoverException {
 
-        String regex = RegexSelector.getRegexByFileType("properties", commentRemover.isRemoveSingleLines(), commentRemover.isRemoveMultiLines());
+        String regex = RegexSelector.getRegexByFileType("properties");
         replaceCommentsWithABlank(regex);
     }
 
@@ -170,13 +170,17 @@ final class FileProcessor {
         StringBuilder content = new StringBuilder((int) fileSize);
         BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(file), "UTF-8"));
 
-        if (isSingleLineSupported(fileType)) {
+        if (isSingleLineSupported(fileType) && isGoingToRemoveSingleComments()) {
             getSupportingSingleLineContent(br, content, fileType);
         } else {
             getNonSupportingSingleLineContent(br, content);
         }
 
         return content;
+    }
+
+    private boolean isGoingToRemoveSingleComments() {
+        return commentRemover.isRemoveSingleLines();
     }
 
     private void getSupportingSingleLineContent(BufferedReader br, StringBuilder content, String fileType) throws IOException {
@@ -215,7 +219,6 @@ final class FileProcessor {
 
     private StringBuilder doRemoveOperation(StringBuilder fileContent, Matcher matcher, String fileType) {
 
-
         if (isSingleLineSupported(fileType)) {
             return doRemoveOperationForJavaLikeComments(fileContent, matcher);
         } else {
@@ -233,9 +236,12 @@ final class FileProcessor {
                 String foundToken = matcher.group();
 
                 if (isBothCommentTypeNotSelected) {
-                    if (isOnlySingleCommentSelected() && isMultiLineCommentToken(foundToken)) {
+
+                    if (isOnlyMultiLineCommentSelected() && isSingleCommentToken(foundToken)) {
                         continue;
-                    } else if (isOnlyMultiLineCommentSelected() && isSingleCommentToken(foundToken)) {
+                    }
+
+                    if (isOnlySingleCommentSelected() && isMultiLineCommentToken(foundToken)) {
                         continue;
                     }
                 }
@@ -256,7 +262,7 @@ final class FileProcessor {
             fileContent = new StringBuilder(sFileContent);
 
         } catch (StackOverflowError e) {
-            System.err.println("StackOverflowError:Please increase your stack size! VM option command is: -Xss50m if you need to increase more -Xss{size}m");
+            System.err.println("StackOverflowError:Please increase your stack size! VM option command is: -Xss40m if you need to increase more -Xss{size}m");
             System.exit(0);
         }
 
@@ -289,7 +295,7 @@ final class FileProcessor {
             fileContent = new StringBuilder(sFileContent);
 
         } catch (StackOverflowError e) {
-            System.err.println("StackOverflowError:Please increase your stack size! VM option command is: -Xss50m if you need to increase more -Xss{size}m");
+            System.err.println("StackOverflowError:Please increase your stack size! VM option command is: -Xss40m if you need to increase more -Xss{size}m");
             System.exit(0);
         }
 
@@ -305,7 +311,7 @@ final class FileProcessor {
     }
 
     private boolean isSingleCommentToken(String foundToken) {
-        return Pattern.compile("([\\t]*//.*)").matcher(foundToken).find();
+        return foundToken.startsWith("//") || foundToken.startsWith("#");
     }
 
     private boolean isOnlyMultiLineCommentSelected() {
@@ -313,11 +319,11 @@ final class FileProcessor {
     }
 
     private boolean isMultiLineCommentToken(String foundToken) {
-        return Pattern.compile("/\\*([^*]|[\\r\\n]|(\\*+([^*?/]|[\\r\\n])))*\\*+/").matcher(foundToken).find();
+        return foundToken.startsWith("/*");
     }
 
     private boolean isSingleLineSupported(String fileType) {
-        return singleLineSupportedFileTypes.contains(fileType) && commentRemover.isRemoveSingleLines();
+        return singleLineSupportedFileTypes.contains(fileType);
     }
 
     private boolean isDoubleOrSingleQuoteToken(String foundToken) {
