@@ -71,6 +71,12 @@ final class FileProcessor {
                 }
                 break;
 
+            case "properties":
+                if (commentRemover.isRemoveProperties()) {
+                    doPropertiesOperation();
+                }
+                break;
+
             case "jsp":
                 if (commentRemover.isRemoveJSP()) {
                     doJspOperation();
@@ -80,12 +86,6 @@ final class FileProcessor {
             case "css":
                 if (commentRemover.isRemoveCSS()) {
                     doCssOperation();
-                }
-                break;
-
-            case "properties":
-                if (commentRemover.isRemoveProperties()) {
-                    doPropertiesOperation();
                 }
                 break;
 
@@ -115,6 +115,12 @@ final class FileProcessor {
         replaceCommentsWithABlank(regex);
     }
 
+    private void doPropertiesOperation() throws IOException, CommentRemoverException {
+
+        String regex = RegexSelector.getRegexByFileType("properties", commentRemover.isRemoveSingleLines(), commentRemover.isRemoveMultiLines());
+        replaceCommentsWithABlank(regex);
+    }
+
     private void doJspOperation() throws IOException, CommentRemoverException {
 
         String regex = RegexSelector.getRegexByFileType("jsp");
@@ -124,12 +130,6 @@ final class FileProcessor {
     private void doCssOperation() throws IOException, CommentRemoverException {
 
         String regex = RegexSelector.getRegexByFileType("css");
-        replaceCommentsWithABlank(regex);
-    }
-
-    private void doPropertiesOperation() throws IOException, CommentRemoverException {
-
-        String regex = RegexSelector.getRegexByFileType("properties");
         replaceCommentsWithABlank(regex);
     }
 
@@ -154,7 +154,7 @@ final class FileProcessor {
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(fileContent);
 
-        StringBuilder newContent = doRemoveOperation(fileContent, matcher);
+        StringBuilder newContent = doRemoveOperation(fileContent, matcher, fileType);
 
         setFileContent(file, newContent.toString());
     }
@@ -170,7 +170,7 @@ final class FileProcessor {
         StringBuilder content = new StringBuilder((int) fileSize);
         BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(file), "UTF-8"));
 
-        if (isSingleLineSupportedFileType(fileType)) {
+        if (isSingleLineSupported(fileType)) {
             getSupportingSingleLineContent(br, content, fileType);
         } else {
             getNonSupportingSingleLineContent(br, content);
@@ -213,7 +213,57 @@ final class FileProcessor {
         br.close();
     }
 
-    private StringBuilder doRemoveOperation(StringBuilder fileContent, Matcher matcher) {
+    private StringBuilder doRemoveOperation(StringBuilder fileContent, Matcher matcher, String fileType) {
+
+
+        if (isSingleLineSupported(fileType)) {
+            return doRemoveOperationForJavaLikeComments(fileContent, matcher);
+        } else {
+            return doRemoveOperationForOtherComments(fileContent, matcher);
+        }
+    }
+
+    private StringBuilder doRemoveOperationForJavaLikeComments(StringBuilder fileContent, Matcher matcher) {
+        try {
+            String sFileContent = fileContent.toString();
+            boolean isTodosRemoving = commentRemover.isRemoveTodos();
+            boolean isBothCommentTypeNotSelected = isBothCommentTypeNotSelected();
+            while (matcher.find()) {
+
+                String foundToken = matcher.group();
+
+                if (isBothCommentTypeNotSelected) {
+                    if (isOnlySingleCommentSelected() && isMultiLineCommentToken(foundToken)) {
+                        continue;
+                    } else if (isOnlyMultiLineCommentSelected() && isSingleCommentToken(foundToken)) {
+                        continue;
+                    }
+                }
+
+                if (isDoubleOrSingleQuoteToken(foundToken)) {
+                    continue;
+                }
+
+                if (isTodosRemoving) {
+                    sFileContent = sFileContent.replaceFirst(Pattern.quote(foundToken), "");
+                } else {
+                    if (isNotContainTodo(foundToken)) {
+                        sFileContent = sFileContent.replaceFirst(Pattern.quote(foundToken), "");
+                    }
+                }
+            }
+
+            fileContent = new StringBuilder(sFileContent);
+
+        } catch (StackOverflowError e) {
+            System.err.println("StackOverflowError:Please increase your stack size! VM option command is: -Xss50m if you need to increase more -Xss{size}m");
+            System.exit(0);
+        }
+
+        return fileContent;
+    }
+
+    private StringBuilder doRemoveOperationForOtherComments(StringBuilder fileContent, Matcher matcher) {
 
         try {
             String sFileContent = fileContent.toString();
@@ -246,8 +296,28 @@ final class FileProcessor {
         return fileContent;
     }
 
-    private boolean isSingleLineSupportedFileType(String fileType) {
-        return singleLineSupportedFileTypes.contains(fileType);
+    private boolean isBothCommentTypeNotSelected() {
+        return !(commentRemover.isRemoveSingleLines() && commentRemover.isRemoveMultiLines());
+    }
+
+    private boolean isOnlySingleCommentSelected() {
+        return commentRemover.isRemoveSingleLines() && !commentRemover.isRemoveMultiLines();
+    }
+
+    private boolean isSingleCommentToken(String foundToken) {
+        return Pattern.compile("([\\t]*//.*)").matcher(foundToken).find();
+    }
+
+    private boolean isOnlyMultiLineCommentSelected() {
+        return !commentRemover.isRemoveSingleLines() && commentRemover.isRemoveMultiLines();
+    }
+
+    private boolean isMultiLineCommentToken(String foundToken) {
+        return Pattern.compile("/\\*([^*]|[\\r\\n]|(\\*+([^*?/]|[\\r\\n])))*\\*+/").matcher(foundToken).find();
+    }
+
+    private boolean isSingleLineSupported(String fileType) {
+        return singleLineSupportedFileTypes.contains(fileType) && commentRemover.isRemoveSingleLines();
     }
 
     private boolean isDoubleOrSingleQuoteToken(String foundToken) {

@@ -14,7 +14,7 @@ public class RegexSelector {
 
             case "js":
             case "java":
-                return regexJavaAndJavaScript(isSingleLinesEnabled, isMultiLinesEnabled);
+                return RegexPatterns.getCommentRegexMultiAndSingleLine();
 
             case "properties":
                 return RegexPatterns.getCommentRegexProperties();
@@ -31,10 +31,5 @@ public class RegexSelector {
         }
 
         return null;
-    }
-
-    private static String regexJavaAndJavaScript(boolean isSingleLinesEnabled, boolean isMultiLinesEnabled) {
-        return (isSingleLinesEnabled && isMultiLinesEnabled) ? RegexPatterns.getCommentRegexMultiAndSingleLine() :
-                (isSingleLinesEnabled) ? RegexPatterns.getCommentRegexSingleLine() : RegexPatterns.getCommentRegexMultiLine();
     }
 }

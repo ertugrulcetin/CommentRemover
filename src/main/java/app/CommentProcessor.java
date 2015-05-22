@@ -23,6 +23,7 @@ public class CommentProcessor {
     private final FileProcessor fileProcessor;
     private final List<String> supportedExtensions;
 
+
     public CommentProcessor(CommentRemover commentRemover) {
         this.commentRemover = commentRemover;
         this.userInputHandler = new UserInputHandler(commentRemover);

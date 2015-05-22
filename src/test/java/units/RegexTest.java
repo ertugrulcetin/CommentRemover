@@ -67,20 +67,28 @@ public class RegexTest {
         Pattern pattern = Pattern.compile(RegexPatterns.getCommentRegexSingleLine());
         Matcher matcher = pattern.matcher(content);
 
-        while(matcher.find()){
+        while (matcher.find()) {
             System.out.println(matcher.group());
         }
 
         content = matcher.replaceAll("");
 
-        assertEquals(content,"");
+        assertEquals(content, "");
 
     }
 
     @Test
-    public void testNestedQuto(){
+    public void testNestedQuto() {
         String details = "Hello \"world\"!";
-        details = details.replace("\"","\\\"");
+        details = details.replace("\"", "\'");
         System.out.println(details);
+    }
+
+    @Test
+    public void testString() {
+
+        String temp = "";
+        assertEquals(temp.trim().length() == 0, true);
+
     }
 }
