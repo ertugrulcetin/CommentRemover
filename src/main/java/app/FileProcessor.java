@@ -21,9 +21,8 @@ import java.util.regex.Pattern;
 
 final class FileProcessor {
 
-    private static final FileProcessor FILE_PROCESSOR = new FileProcessor();
 
-    private CommentRemover commentRemover;
+    private final CommentRemover commentRemover;
     private String currentFilePath;
 
     private static final Map<String, String> mappingEmptySingleLineCommentToEscapingComment;
@@ -46,14 +45,7 @@ final class FileProcessor {
         singleLineSupportedFileTypes.add("properties");
     }
 
-    private FileProcessor() {
-    }
-
-    protected static FileProcessor getInstance() {
-        return FILE_PROCESSOR;
-    }
-
-    protected void setCommentRemover(CommentRemover commentRemover) {
+    protected FileProcessor(CommentRemover commentRemover) {
         this.commentRemover = commentRemover;
     }
 
@@ -172,7 +164,7 @@ final class FileProcessor {
         long fileSize = file.length();
 
         if (fileSize > Integer.MAX_VALUE) {
-            throw new CommentRemoverException("File size so big for scanning !");
+            throw new CommentRemoverException("File size so big for scanning ! -> " + file.getAbsolutePath());
         }
 
         StringBuilder content = new StringBuilder((int) fileSize);
@@ -195,7 +187,7 @@ final class FileProcessor {
         String temp;
         while ((temp = br.readLine()) != null) {
             String trimmedTemp = temp.trim();
-            if (trimmedTemp.startsWith(commentSymbol) && !isContainTodo(trimmedTemp)) {
+            if (trimmedTemp.startsWith(commentSymbol) && isNotContainTodo(trimmedTemp)) {
                 content.append(commentEscaped).append("\n");
             } else {
                 content.append(temp).append("\n");
@@ -238,16 +230,10 @@ final class FileProcessor {
                 if (isTodosRemoving) {
                     sFileContent = sFileContent.replaceFirst(Pattern.quote(foundToken), "");
                 } else {
-                    if (!isContainTodo(foundToken)) {
+                    if (isNotContainTodo(foundToken)) {
                         sFileContent = sFileContent.replaceFirst(Pattern.quote(foundToken), "");
                     }
                 }
-            }
-
-            if (isSingleLineSupportedFileType(fileType)) {
-                String commentSymbol = getCommentSymbolByFileType(fileType);
-                String commentEscaped = getCommentEscapedByCommentSymbol(commentSymbol);
-                sFileContent = sFileContent.replace(commentEscaped, "");
             }
 
             fileContent = new StringBuilder(sFileContent);
@@ -268,8 +254,8 @@ final class FileProcessor {
         return foundToken.startsWith("\"") || foundToken.startsWith("\'");
     }
 
-    private boolean isContainTodo(String foundToken) {
-        return Pattern.compile(Pattern.quote("todo"), Pattern.CASE_INSENSITIVE).matcher(foundToken).find();
+    private boolean isNotContainTodo(String foundToken) {
+        return !Pattern.compile(Pattern.quote("todo"), Pattern.CASE_INSENSITIVE).matcher(foundToken).find();
     }
 
     private void setFileContent(File file, String newContent) throws IOException {

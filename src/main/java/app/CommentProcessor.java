@@ -26,7 +26,7 @@ public class CommentProcessor {
     public CommentProcessor(CommentRemover commentRemover) {
         this.commentRemover = commentRemover;
         this.userInputHandler = new UserInputHandler(commentRemover);
-        this.fileProcessor = FileProcessor.getInstance();
+        this.fileProcessor = new FileProcessor(commentRemover);
         this.supportedExtensions = Arrays.asList("java", "js", "jsp", "html", "css", "xml", "properties");
     }
 
@@ -34,7 +34,6 @@ public class CommentProcessor {
         checkAllStates();
         displayProcessStarted();
         displayProcessProgressByDots();
-        setFileProcessorCommentRemover();
         doProcess();
         displayProcessSuccessfullyDone();
     }
@@ -78,10 +77,6 @@ public class CommentProcessor {
                 }
             }
         }).start();
-    }
-
-    private void setFileProcessorCommentRemover() {
-        fileProcessor.setCommentRemover(commentRemover);
     }
 
     private void doProcess() {
@@ -142,8 +137,7 @@ public class CommentProcessor {
                 @Override
                 public FileVisitResult visitFileFailed(Path file, IOException exc) throws IOException {
 
-                    exc.printStackTrace();
-
+                    System.err.println(exc.getMessage());
                     return FileVisitResult.CONTINUE;
                 }
 
