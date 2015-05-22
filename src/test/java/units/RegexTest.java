@@ -15,7 +15,7 @@ public class RegexTest {
 
         String line = "// A note on memory visibility.";
 
-        Pattern singleLinePattern = Pattern.compile(RegexPatterns.getCommentRegexSingleLine());
+        Pattern singleLinePattern = Pattern.compile(RegexPatterns.getCommentRegexCss());
         Matcher matcher = singleLinePattern.matcher(line);
 
         line = matcher.replaceAll("");
@@ -27,7 +27,7 @@ public class RegexTest {
     @Test
     public void testDoubleQutoe() {
 
-        String singleLineRegex = RegexPatterns.getCommentRegexSingleLine();
+        String singleLineRegex = RegexPatterns.getCommentRegexCss();
 
         Pattern pattern = Pattern.compile(singleLineRegex);
         Matcher matcher = pattern.matcher("file://foo/bar/baz.txt");
@@ -64,7 +64,7 @@ public class RegexTest {
 
         String content = "// This benchmark has no concept of \"noWorkToDo\".";
 
-        Pattern pattern = Pattern.compile(RegexPatterns.getCommentRegexSingleLine());
+        Pattern pattern = Pattern.compile(RegexPatterns.getCommentRegexCss());
         Matcher matcher = pattern.matcher(content);
 
         while (matcher.find()) {

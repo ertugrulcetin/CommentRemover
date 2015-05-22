@@ -20,7 +20,7 @@ public class RegexSelector {
                 return RegexPatterns.getCommentRegexProperties();
 
             case "css":
-                return RegexPatterns.getCommentRegexMultiLine();
+                return RegexPatterns.getCommentRegexCss();
 
             case "jsp":
                 return RegexPatterns.getCommentRegexJsp();
