@@ -16,6 +16,7 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.UUID;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -28,6 +29,7 @@ final class FileProcessor {
     private static final Map<String, String> mappingEmptySingleLineCommentToEscapingComment;
     private static final Map<String, String> mappingFileTypeToSingleComment;
     private static final List<String> singleLineSupportedFileTypes;
+    private static final String singleLineTodoCommentEscapePrefix;
 
     static {
         mappingEmptySingleLineCommentToEscapingComment = new HashMap<>();
@@ -43,6 +45,8 @@ final class FileProcessor {
         singleLineSupportedFileTypes.add("js");
         singleLineSupportedFileTypes.add("java");
         singleLineSupportedFileTypes.add("properties");
+
+        singleLineTodoCommentEscapePrefix = UUID.randomUUID().toString();
     }
 
     protected FileProcessor(CommentRemover commentRemover) {
@@ -253,10 +257,19 @@ final class FileProcessor {
                 if (isTodosRemoving) {
                     sFileContent = sFileContent.replaceFirst(Pattern.quote(foundToken), "");
                 } else {
+
+                    if (isSingleLineTodoToken(foundToken)) {
+                        sFileContent = sFileContent.replaceFirst(Pattern.quote(foundToken), foundToken.replace("//", singleLineTodoCommentEscapePrefix));
+                    }
+
                     if (isNotContainTodo(foundToken)) {
                         sFileContent = sFileContent.replaceFirst(Pattern.quote(foundToken), "");
                     }
                 }
+            }
+
+            if (!isTodosRemoving) {
+                sFileContent = sFileContent.replace(singleLineTodoCommentEscapePrefix, "//");
             }
 
             fileContent = new StringBuilder(sFileContent);
@@ -267,6 +280,10 @@ final class FileProcessor {
         }
 
         return fileContent;
+    }
+
+    private boolean isSingleLineTodoToken(String foundToken) {
+        return isSingleCommentToken(foundToken) && !isNotContainTodo(foundToken);
     }
 
     private StringBuilder doRemoveOperationForOtherComments(StringBuilder fileContent, Matcher matcher) {
@@ -311,7 +328,7 @@ final class FileProcessor {
     }
 
     private boolean isSingleCommentToken(String foundToken) {
-        return foundToken.trim().startsWith("//") || foundToken.trim().startsWith("#");
+        return foundToken.trim().startsWith("//");
     }
 
     private boolean isOnlyMultiLineCommentSelected() {

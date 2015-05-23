@@ -3,6 +3,7 @@ package units;
 import app.RegexPatterns;
 import org.junit.Test;
 
+import java.util.UUID;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -114,6 +115,16 @@ public class RegexTest {
         boolean isSingleLineComment = Pattern.compile("([\\t]*//.*)").matcher(foundToken).find();
         System.out.println("Is single line?: " + isSingleLineComment);
     }
+
+    @Test
+    public void testRandomUUID(){
+
+        String uuid = UUID.randomUUID().toString();
+
+        System.out.println(uuid);
+
+    }
+
 
 }
 
