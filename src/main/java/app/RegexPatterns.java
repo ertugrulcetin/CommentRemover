@@ -2,7 +2,7 @@ package app;
 
 public class RegexPatterns {
 
-    private static final String COMMENT_REGEX_MULTI_AND_SINGLE_LINE = "(/\\*([^*]|[\\r\\n]|(\\*+([^*/]|[\\r\\n])))*\\*+/|[ \\t]*//.*)|\"(\\\\.|[^\\\\\"])*\"|'(\\\\[\\s\\S]|[^'])*'";
+    private static final String COMMENT_REGEX_MULTI_AND_SINGLE_LINE = "(/\\*([^*]|[\\r\\n]|(\\*+([^*/]|[\\r\\n])))*\\*+/|[\\t]*//.*)|\"(\\\\.|[^\\\\\"])*\"|'(\\\\[\\s\\S]|[^'])*'";
 
     private static final String COMMENT_REGEX_CSS = "/\\*([^*]|[\\r\\n]|(\\*+([^*?/]|[\\r\\n])))*\\*+/|\\\".*\\\"|\"|\'";
 

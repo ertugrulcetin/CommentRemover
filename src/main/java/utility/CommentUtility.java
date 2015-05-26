@@ -26,7 +26,7 @@ public class CommentUtility {
     }
 
     public static String getStartInternalPathInValidForm(String path) {
-        return (getCurrentPath() + getFileSeparator() + replaceDotWithSlash(path)).trim();
+        return getCurrentPath() + getFileSeparator() + replaceDotWithSlash(path).trim();
     }
 
     public static String getStartExternalPathInValidForm(String path) {
@@ -37,7 +37,7 @@ public class CommentUtility {
 
         String[] pathArray = new String[paths.length];
         for (int i = 0; i < pathArray.length; i++) {
-            pathArray[i] = (getCurrentPath() + getFileSeparator() + replaceDotWithSlash(paths[i])).trim();
+            pathArray[i] = getCurrentPath() + getFileSeparator() + replaceDotWithSlash(paths[i]).trim();
         }
 
         return pathArray;
@@ -47,7 +47,7 @@ public class CommentUtility {
 
         String[] pathArray = new String[paths.length];
         for (int i = 0; i < pathArray.length; i++) {
-            pathArray[i] = (path + getFileSeparator() + replaceDotWithSlash(paths[i])).trim();
+            pathArray[i] = path + getFileSeparator() + replaceDotWithSlash(paths[i]).trim();
         }
 
         return pathArray;

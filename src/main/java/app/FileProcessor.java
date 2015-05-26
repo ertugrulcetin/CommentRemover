@@ -2,6 +2,7 @@ package app;
 
 import exception.CommentRemoverException;
 import handling.RegexSelector;
+import processors.JavaFileProcessor;
 import utility.CommentUtility;
 
 import java.io.BufferedReader;
@@ -31,6 +32,8 @@ final class FileProcessor {
     private static final List<String> singleLineSupportedFileTypes;
     private static final String singleLineTodoCommentEscapePrefix;
 
+    private JavaFileProcessor javaFileProcessor;
+
     static {
         mappingEmptySingleLineCommentToEscapingComment = new HashMap<>();
         mappingEmptySingleLineCommentToEscapingComment.put("//", "//!-COMMENT_REMOVER_SINGLE_COMMENT_ESCAPE-!");
@@ -51,6 +54,7 @@ final class FileProcessor {
 
     protected FileProcessor(CommentRemover commentRemover) {
         this.commentRemover = commentRemover;
+        this.javaFileProcessor = new JavaFileProcessor(commentRemover);
     }
 
     protected void setCurrentFilePath(String currentFilePath) {
@@ -71,7 +75,8 @@ final class FileProcessor {
 
             case "java":
                 if (commentRemover.isRemoveJava()) {
-                    doJavaOperation();
+                    javaFileProcessor.setCurrentFilePath(currentFilePath);
+                    javaFileProcessor.replaceCommentsWithBlanks();
                 }
                 break;
 
@@ -239,6 +244,10 @@ final class FileProcessor {
 
                 String foundToken = matcher.group();
 
+                if (isDoubleOrSingleQuoteToken(foundToken)) {
+                    continue;
+                }
+
                 if (isBothCommentTypeNotSelected) {
 
                     if (isOnlyMultiLineCommentSelected() && isSingleCommentToken(foundToken)) {
@@ -248,10 +257,6 @@ final class FileProcessor {
                     if (isOnlySingleCommentSelected() && isMultiLineCommentToken(foundToken)) {
                         continue;
                     }
-                }
-
-                if (isDoubleOrSingleQuoteToken(foundToken)) {
-                    continue;
                 }
 
                 if (isTodosRemoving) {

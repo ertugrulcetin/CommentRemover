@@ -33,20 +33,15 @@ public class ReleaseTest {
 //                .removeCSS(true)
 //                .removeHTML(true)
 //                .removeXML(true)
-//                .removeSingleLines(true)
+                .removeSingleLines(true)
                 .removeMultiLines(true)
                 .removeTodos(true)
 //                .startInternalPath(" ")
-//                .startExternalPath("/Users/ertugrulcetin/IdeaProjects/dropwizard")
-//                .startExternalPath("/Users/ertugrulcetin/IdeaProjects/guava")
-//                .startExternalPath("/Users/ertugrulcetin/IdeaProjects/guava/guava/src/com/google/common/cache")
+//                .startExternalPath("/Users/ertugrulcetin/IdeaProjects/junit/src")
                 .startExternalPath("/Users/ertugrulcetin/IdeaProjects/elasticsearch")
-//                .startExternalPath("/Users/ertugrulcetin/IdeaProjects/elasticsearch/src/test/java/org/elasticsearch/search/aggregations/ParsingTests.java")
+//                .startExternalPath("/Users/ertugrulcetin/IdeaProjects/elasticsearch/src/test/java/org/elasticsearch/common/path/PathTrieTests.java")
 //                .startExternalPath("/Users/ertugrulcetin/IdeaProjects/elasticsearch/src/main/java/org/elasticsearch/common")
 //                .startExternalPath("/Users/ertugrulcetin/Downloads/elasticsearch-master")
-//                .startExternalPath("/Users/ertugrulcetin/IdeaProjects/guava/guava-tests/benchmark/com/google/common/base")
-//                .startExternalPath("/Users/ertugrulcetin/IdeaProjects/guava/guava/src/com/google/common/html/")
-//                        .startExternalPath("/Users/ertugrulcetin/Desktop/ertucan")
                 /*.setExcludePackages(new String[]{"blobstore",
                         "breaker",
                         "bytes",

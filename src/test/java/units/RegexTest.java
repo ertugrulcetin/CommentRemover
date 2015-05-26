@@ -90,7 +90,6 @@ public class RegexTest {
 
         String temp = "";
         assertEquals(temp.trim().length() == 0, true);
-
     }
 
     @Test
@@ -117,11 +116,15 @@ public class RegexTest {
     }
 
     @Test
-    public void testRandomUUID(){
+    public void testRandomUUID() {
 
         String uuid = UUID.randomUUID().toString();
 
         System.out.println(uuid);
+
+        for (int i = 0; i < 1000; i++) {
+            System.out.println(System.currentTimeMillis());
+        }
 
     }
 

@@ -129,7 +129,7 @@ public class CommentProcessor {
                         fileProcessor.setCurrentFilePath(filePath);
                         fileProcessor.removeComments();
                     } catch (CommentRemoverException e) {
-                        e.printStackTrace();
+                        System.err.println(e.getMessage());
                     }
 
                     return FileVisitResult.CONTINUE;
