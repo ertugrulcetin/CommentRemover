@@ -1,6 +1,6 @@
 package units;
 
-import app.RegexPatterns;
+import pattern.RegexPatterns;
 import org.junit.Test;
 
 import java.util.UUID;

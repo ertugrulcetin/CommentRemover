@@ -26,53 +26,14 @@ public class ReleaseTest {
 
         s = System.currentTimeMillis();
         CommentRemover commentRemover = new CommentRemover.CommentRemoverBuilder()
-                .removeJava(true)
-//                .removeProperties(true)
-//                .removeJavaScript(true)
-//                .removeJSP(true)
+//                .removeXML(true)
 //                .removeCSS(true)
 //                .removeHTML(true)
-//                .removeXML(true)
+                .removeJSP(true)
                 .removeSingleLines(true)
                 .removeMultiLines(true)
                 .removeTodos(true)
-//                .startInternalPath(" ")
-//                .startExternalPath("/Users/ertugrulcetin/IdeaProjects/junit/src")
-                .startExternalPath("/Users/ertugrulcetin/IdeaProjects/elasticsearch")
-//                .startExternalPath("/Users/ertugrulcetin/IdeaProjects/elasticsearch/src/test/java/org/elasticsearch/common/path/PathTrieTests.java")
-//                .startExternalPath("/Users/ertugrulcetin/IdeaProjects/elasticsearch/src/main/java/org/elasticsearch/common")
-//                .startExternalPath("/Users/ertugrulcetin/Downloads/elasticsearch-master")
-                /*.setExcludePackages(new String[]{"blobstore",
-                        "breaker",
-                        "bytes",
-                        "cli",
-                        "collect",
-                        "component",
-                        "compress",
-                        "geo",
-                        "hash",
-                        "inject",
-                        "io",
-                        "jna",
-                        "joda",
-                        "lease",
-                        "logging",
-                        "lucene",
-                        "math",
-                        "metrics",
-                        "netty",
-                        "network",
-//                        "path",
-                        "property",
-                        "recycler",
-                        "regex",
-                        "rounding",
-                        "settings",
-                        "text",
-                        "transport",
-                        "unit",
-                        "util",
-                        "xcontent"})*/
+                .startInternalPath(" ")
                 .build();
 
         CommentProcessor commentProcessor = new CommentProcessor(commentRemover);

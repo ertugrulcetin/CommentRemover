@@ -80,7 +80,7 @@ import java.io.File;
         String startingExternalPath = CommentUtility.getStartExternalPathInValidForm(commentRemover.getStartExternalPath());
         File file = new File(startingExternalPath);
 
-        //TODO değişcek!file gidicek
+        
         if (!(file.exists() && file.isDirectory() || file.isFile())) {
             throw new CommentRemoverException("Please specify valid directory path! " + file.getAbsolutePath() + " is not a valid directory.");
         }

@@ -78,4 +78,8 @@ abstract class AbstractFileProcessor {
         bw.flush();
         bw.close();
     }
+
+    protected boolean isContainTodo(String foundToken) {
+        return Pattern.compile(Pattern.quote("todo"), Pattern.CASE_INSENSITIVE).matcher(foundToken).find();
+    }
 }

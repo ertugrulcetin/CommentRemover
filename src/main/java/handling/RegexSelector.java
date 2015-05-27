@@ -1,6 +1,6 @@
 package handling;
 
-import app.RegexPatterns;
+import pattern.RegexPatterns;
 
 public class RegexSelector {
 

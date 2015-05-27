@@ -27,7 +27,7 @@ public class JavaFileProcessor extends AbstractFileProcessor {
         singleLineTodoCommentEscapePrefix = UUID.randomUUID().toString();
     }
 
-    public JavaFileProcessor(CommentRemover commentRemover) {
+     public JavaFileProcessor(CommentRemover commentRemover) {
         super(commentRemover);
     }
 
@@ -143,9 +143,5 @@ public class JavaFileProcessor extends AbstractFileProcessor {
 
     private boolean isSingleLineTodoToken(String foundToken) {
         return isSingleCommentToken(foundToken) && isContainTodo(foundToken);
-    }
-
-    private boolean isContainTodo(String foundToken) {
-        return Pattern.compile(Pattern.quote("todo"), Pattern.CASE_INSENSITIVE).matcher(foundToken).find();
     }
 }

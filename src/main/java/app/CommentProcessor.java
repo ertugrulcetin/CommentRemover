@@ -20,14 +20,14 @@ public class CommentProcessor {
     private final CommentRemover commentRemover;
     private final UserInputHandler userInputHandler;
 
-    private final FileProcessor fileProcessor;
+    private final FileProcessRouter fileProcessRouter;
     private final List<String> supportedExtensions;
 
 
     public CommentProcessor(CommentRemover commentRemover) {
         this.commentRemover = commentRemover;
         this.userInputHandler = new UserInputHandler(commentRemover);
-        this.fileProcessor = new FileProcessor(commentRemover);
+        this.fileProcessRouter = new FileProcessRouter(commentRemover);
         this.supportedExtensions = Arrays.asList("java", "js", "jsp", "html", "css", "xml", "properties");
     }
 
@@ -83,6 +83,8 @@ public class CommentProcessor {
     private void doProcess() {
 
         final Path startingPath = Paths.get(getSelectedStartingPath());
+        final String[] excludePackagesPaths = getExcludePackagesPathsInValidForm(commentRemover.getExcludePackages(), startingPath.toString());
+
         try {
             Files.walkFileTree(startingPath, new SimpleFileVisitor<Path>() {
                 @Override
@@ -93,17 +95,9 @@ public class CommentProcessor {
                         return FileVisitResult.CONTINUE;
                     }
 
+                    if (excludePackagesPaths != null) {
 
-                    String[] excludePackagePaths = commentRemover.getExcludePackages();
-                    if (excludePackagePaths != null) {
-
-                        if (isStartInternalPathSelected()) {
-                            excludePackagePaths = CommentUtility.getExcludePackagesInValidFormForInternalStarting(excludePackagePaths);
-                        } else {
-                            excludePackagePaths = CommentUtility.getExcludePackagesInValidFormForExternalStarting(startingPath.toString(), excludePackagePaths);
-                        }
-
-                        for (String excludePackagePath : excludePackagePaths) {
+                        for (String excludePackagePath : excludePackagesPaths) {
 
                             String currentDirectoryPath = dir.toString();
                             if (currentDirectoryPath.equals(excludePackagePath)) {
@@ -126,8 +120,8 @@ public class CommentProcessor {
 
                     try {
                         String filePath = file.toString();
-                        fileProcessor.setCurrentFilePath(filePath);
-                        fileProcessor.removeComments();
+                        fileProcessRouter.setCurrentFilePath(filePath);
+                        fileProcessRouter.removeComments();
                     } catch (CommentRemoverException e) {
                         System.err.println(e.getMessage());
                     }
@@ -151,6 +145,17 @@ public class CommentProcessor {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    private String[] getExcludePackagesPathsInValidForm(String[] excludePackagesPaths, String startingPath) {
+
+        if (excludePackagesPaths == null) {
+            return null;
+        }
+
+        return isStartInternalPathSelected() ?
+                CommentUtility.getExcludePackagesInValidFormForInternalStarting(excludePackagesPaths) :
+                CommentUtility.getExcludePackagesInValidFormForExternalStarting(startingPath, excludePackagesPaths);
     }
 
     private String getSelectedStartingPath() {
