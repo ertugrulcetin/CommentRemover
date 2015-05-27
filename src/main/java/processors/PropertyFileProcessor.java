@@ -56,34 +56,29 @@ public class PropertyFileProcessor extends AbstractFileProcessor {
     }
 
     @Override
-    protected StringBuilder doRemoveOperation(StringBuilder fileContent, Matcher matcher) {
+    protected StringBuilder doRemoveOperation(StringBuilder fileContent, Matcher matcher) throws StackOverflowError {
 
-        try {
-            String sFileContent = fileContent.toString();
-            boolean isTodosRemoving = commentRemover.isRemoveTodos();
-            while (matcher.find()) {
+        String sFileContent = fileContent.toString();
+        boolean isTodosRemoving = commentRemover.isRemoveTodos();
+        while (matcher.find()) {
 
-                String foundToken = matcher.group();
+            String foundToken = matcher.group();
 
-                if (isEqualsToken(foundToken)) {
-                    continue;
-                }
-
-                if (isTodosRemoving) {
-                    sFileContent = sFileContent.replaceFirst(Pattern.quote(foundToken), "");
-                } else {
-                    if (!isContainTodo(foundToken)) {
-                        sFileContent = sFileContent.replaceFirst(Pattern.quote(foundToken), "");
-                    }
-                }
+            if (isEqualsToken(foundToken)) {
+                continue;
             }
 
-            fileContent = new StringBuilder(sFileContent);
-
-        } catch (StackOverflowError e) {
-            System.err.println("StackOverflowError:Please increase your stack size! VM option command is: -Xss40m if you need to increase more -Xss{size}m");
-            System.exit(0);
+            if (isTodosRemoving) {
+                sFileContent = sFileContent.replaceFirst(Pattern.quote(foundToken), "");
+            } else {
+                if (!isContainTodo(foundToken)) {
+                    sFileContent = sFileContent.replaceFirst(Pattern.quote(foundToken), "");
+                }
+            }
         }
+
+        fileContent = new StringBuilder(sFileContent);
+
 
         return fileContent;
     }

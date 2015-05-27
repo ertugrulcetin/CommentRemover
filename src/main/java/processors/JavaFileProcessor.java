@@ -27,7 +27,7 @@ public class JavaFileProcessor extends AbstractFileProcessor {
         singleLineTodoCommentEscapePrefix = UUID.randomUUID().toString();
     }
 
-     public JavaFileProcessor(CommentRemover commentRemover) {
+    public JavaFileProcessor(CommentRemover commentRemover) {
         super(commentRemover);
     }
 
@@ -65,57 +65,53 @@ public class JavaFileProcessor extends AbstractFileProcessor {
     }
 
     @Override
-    protected StringBuilder doRemoveOperation(StringBuilder fileContent, Matcher matcher) {
-        try {
-            String sFileContent = fileContent.toString();
-            boolean isTodosRemoving = commentRemover.isRemoveTodos();
-            boolean isBothCommentTypeNotSelected = isBothCommentTypeNotSelected();
-            while (matcher.find()) {
+    protected StringBuilder doRemoveOperation(StringBuilder fileContent, Matcher matcher) throws StackOverflowError{
 
-                String foundToken = matcher.group();
+        String sFileContent = fileContent.toString();
+        boolean isTodosRemoving = commentRemover.isRemoveTodos();
+        boolean isBothCommentTypeNotSelected = isBothCommentTypeNotSelected();
+        while (matcher.find()) {
 
-                if (isDoubleOrSingleQuoteToken(foundToken)) {
+            String foundToken = matcher.group();
+
+            if (isDoubleOrSingleQuoteToken(foundToken)) {
+                continue;
+            }
+
+            if (isBothCommentTypeNotSelected) {
+
+                if (isOnlyMultiLineCommentSelected() && isSingleCommentToken(foundToken)) {
                     continue;
                 }
 
-                if (isBothCommentTypeNotSelected) {
+                if (isOnlySingleCommentSelected() && isMultiLineCommentToken(foundToken)) {
+                    continue;
+                }
+            }
 
-                    if (isOnlyMultiLineCommentSelected() && isSingleCommentToken(foundToken)) {
-                        continue;
-                    }
+            if (isTodosRemoving) {
+                sFileContent = sFileContent.replaceFirst(Pattern.quote(foundToken), "");
+            } else {
 
-                    if (isOnlySingleCommentSelected() && isMultiLineCommentToken(foundToken)) {
-                        continue;
-                    }
+                if (isSingleLineTodoToken(foundToken)) {
+                    sFileContent = sFileContent.replaceFirst(Pattern.quote(foundToken), foundToken.replace("//", singleLineTodoCommentEscapePrefix));
                 }
 
-                if (isTodosRemoving) {
+                if (!isContainTodo(foundToken)) {
                     sFileContent = sFileContent.replaceFirst(Pattern.quote(foundToken), "");
-                } else {
-
-                    if (isSingleLineTodoToken(foundToken)) {
-                        sFileContent = sFileContent.replaceFirst(Pattern.quote(foundToken), foundToken.replace("//", singleLineTodoCommentEscapePrefix));
-                    }
-
-                    if (!isContainTodo(foundToken)) {
-                        sFileContent = sFileContent.replaceFirst(Pattern.quote(foundToken), "");
-                    }
                 }
             }
-
-            if (!isTodosRemoving) {
-                sFileContent = sFileContent.replace(singleLineTodoCommentEscapePrefix, "//");
-            }
-
-            fileContent = new StringBuilder(sFileContent);
-
-        } catch (StackOverflowError e) {
-            System.err.println("StackOverflowError:Please increase your stack size! VM option command is: -Xss40m if you need to increase more -Xss{size}m");
-            System.exit(0);
         }
 
-        return fileContent;
-    }
+        if (!isTodosRemoving) {
+            sFileContent = sFileContent.replace(singleLineTodoCommentEscapePrefix, "//");
+        }
+
+        fileContent = new StringBuilder(sFileContent);
+
+
+    return fileContent;
+}
 
     private boolean isBothCommentTypeNotSelected() {
         return !(commentRemover.isRemoveSingleLines() && commentRemover.isRemoveMultiLines());

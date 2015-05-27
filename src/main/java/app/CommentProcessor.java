@@ -23,6 +23,7 @@ public class CommentProcessor {
     private final FileProcessRouter fileProcessRouter;
     private final List<String> supportedExtensions;
 
+    private volatile boolean isFinished = false;
 
     public CommentProcessor(CommentRemover commentRemover) {
         this.commentRemover = commentRemover;
@@ -31,7 +32,7 @@ public class CommentProcessor {
         this.supportedExtensions = Arrays.asList("java", "js", "jsp", "html", "css", "xml", "properties");
     }
 
-    public void start() {
+    public void start() throws CommentRemoverException, StackOverflowError {
         checkAllStates();
         displayProcessStarted();
         displayProcessProgressByDots();
@@ -43,13 +44,8 @@ public class CommentProcessor {
         System.out.println("PROCESS STARTED...It may take a while(based on your project size).Please be patient :)\n");
     }
 
-    private void checkAllStates() {
-        try {
-            userInputHandler.checkAllStates();
-        } catch (CommentRemoverException e) {
-            e.printStackTrace();
-            System.exit(0);
-        }
+    private void checkAllStates() throws CommentRemoverException {
+        userInputHandler.checkAllStates();
     }
 
     private void displayProcessProgressByDots() {
@@ -60,7 +56,7 @@ public class CommentProcessor {
             public void run() {
 
                 int starCount = 0;
-                while (true) {
+                while (!isFinished) {
 
                     if (starCount >= 10) {
                         System.out.println("*\t");
@@ -110,7 +106,7 @@ public class CommentProcessor {
                 }
 
                 @Override
-                public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) throws IOException {
+                public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) throws IOException, StackOverflowError {
 
                     String fileName = file.getFileName().toString();
                     String fileExtension = CommentUtility.getExtension(fileName);
@@ -124,6 +120,9 @@ public class CommentProcessor {
                         fileProcessRouter.removeComments();
                     } catch (CommentRemoverException e) {
                         System.err.println(e.getMessage());
+                    } catch (StackOverflowError e) {
+                        System.err.println("StackOverflowError:Please increase your stack size! VM option command is: -Xss40m if you need to increase more -Xss{size}m");
+                        throw e;
                     }
 
                     return FileVisitResult.CONTINUE;
@@ -179,7 +178,7 @@ public class CommentProcessor {
     }
 
     private void displayProcessSuccessfullyDone() {
+        isFinished = true;
         System.out.println("\n\nPROCESS SUCCESSFULLY DONE!");
-//        System.exit(0);
     }
 }
