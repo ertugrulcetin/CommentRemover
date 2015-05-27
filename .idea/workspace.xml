@@ -2,28 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="924ad354-3845-49fe-96da-f1135743c6ac" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/dataset/VariableTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/deneme.properties" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/test-classes/units/FileVisitingTest$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/test-classes/units/FileVisitingTest$2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/test-classes/units/FileVisitingTest$3.class" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-units.RegexTest.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/deneme.properties" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/surefire-reports/units.RegexTest.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/surefire-reports/units.ReleaseTest.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/app/CommentProcessor.class" afterPath="$PROJECT_DIR$/target/classes/app/CommentProcessor.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/app/CommentRemover.class" afterPath="$PROJECT_DIR$/target/classes/app/CommentRemover.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/utility/CommentUtility.class" afterPath="$PROJECT_DIR$/target/classes/utility/CommentUtility.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/units/FileVisitingTest.class" afterPath="$PROJECT_DIR$/target/test-classes/units/FileVisitingTest.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/app/RegexPatterns.class" afterPath="$PROJECT_DIR$/target/classes/app/RegexPatterns.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/units/RegexTest.class" afterPath="$PROJECT_DIR$/target/test-classes/units/RegexTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/units/CaseInsensitiveTest.java" afterPath="$PROJECT_DIR$/src/test/java/units/CaseInsensitiveTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/app/CommentProcessor.java" afterPath="$PROJECT_DIR$/src/main/java/app/CommentProcessor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CommentRemover.iml" afterPath="$PROJECT_DIR$/CommentRemover.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/utility/CommentUtility.java" afterPath="$PROJECT_DIR$/src/main/java/utility/CommentUtility.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/app/FileProcessor.java" afterPath="$PROJECT_DIR$/src/main/java/app/FileProcessor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/units/FileVisitingTest.java" afterPath="$PROJECT_DIR$/src/test/java/units/FileVisitingTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/app/RegexPatterns.java" afterPath="$PROJECT_DIR$/src/main/java/app/RegexPatterns.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/units/RegexTest.java" afterPath="$PROJECT_DIR$/src/test/java/units/RegexTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/units/ReleaseTest.java" afterPath="$PROJECT_DIR$/src/test/java/units/ReleaseTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/units/UserInputHandlerTest.java" afterPath="$PROJECT_DIR$/src/test/java/units/UserInputHandlerTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="CommentRemover.iws" />
@@ -54,31 +49,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="ReleaseTest.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ReleaseTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/units/ReleaseTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="35" column="63" selection-start-line="35" selection-start-column="63" selection-end-line="35" selection-end-column="63" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RegexSelector.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/handling/RegexSelector.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="10" column="25" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="25" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FileProcessor.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/app/FileProcessor.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.10398614">
-              <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+            <state vertical-scroll-proportion="0.42542017">
+              <caret line="29" column="41" selection-start-line="29" selection-start-column="41" selection-end-line="29" selection-end-column="41" />
               <folding />
             </state>
           </provider>
@@ -88,70 +63,17 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/app/RegexPatterns.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+              <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CommentProcessor.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/app/CommentProcessor.java">
+      <file leaf-file-name="FileProcessor.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/app/FileProcessor.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-              <folding>
-                <element signature="e#1569#2207#0" expanded="true" />
-                <element signature="e#2206#2207#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CommentRemover.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/app/CommentRemover.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="158" column="37" selection-start-line="158" selection-start-column="37" selection-end-line="158" selection-end-column="37" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserInputHandler.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/handling/UserInputHandler.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="69" column="68" selection-start-line="69" selection-start-column="68" selection-end-line="69" selection-end-column="68" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CommentUtility.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/utility/CommentUtility.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="42" column="52" selection-start-line="42" selection-start-column="52" selection-end-line="42" selection-end-column="52" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="deneme.properties" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/deneme.properties">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="8" column="12" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="30" column="24" selection-start-line="30" selection-start-column="24" selection-end-line="30" selection-end-column="24" />
+              <caret line="236" column="19" selection-start-line="236" selection-start-column="19" selection-end-line="236" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -165,9 +87,9 @@
         <option value="Interface" />
         <option value="Tag Library Descriptor" />
         <option value="JavaScript File" />
-        <option value="Class" />
         <option value="CSS File" />
         <option value="Html5" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -214,24 +136,25 @@
         <option value="$PROJECT_DIR$/src/test/java/units/CommentUserInputHandlerTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/handling/RegexSelector.java" />
         <option value="$PROJECT_DIR$/src/main/java/exception/Error.java" />
-        <option value="$PROJECT_DIR$/src/main/java/app/CommentRemover.java" />
         <option value="$PROJECT_DIR$/src/test/java/units/CaseInsensitiveTes.java" />
         <option value="$PROJECT_DIR$/src/main/java/handling/FileProcessor.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/test/java/units/UserInputHandlerTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/units/FileVisitingTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/units/CaseInsensitiveTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/app/RegexPatterns.java" />
         <option value="$PROJECT_DIR$/src/main/resources/deneme.css" />
         <option value="$PROJECT_DIR$/src/main/resources/des.html" />
         <option value="$PROJECT_DIR$/src/test/java/dataset/VariableTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/utility/CommentUtility.java" />
-        <option value="$PROJECT_DIR$/src/test/java/units/RegexTest.java" />
+        <option value="$PROJECT_DIR$/resources/deneme.properties" />
+        <option value="$PROJECT_DIR$/src/main/java/app/CommentRemover.java" />
         <option value="$PROJECT_DIR$/src/main/java/handling/UserInputHandler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/utility/CommentUtility.java" />
+        <option value="$PROJECT_DIR$/src/test/java/units/PassingTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/app/CommentProcessor.java" />
+        <option value="$PROJECT_DIR$/src/test/java/units/RegexTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/app/FileProcessor.java" />
         <option value="$PROJECT_DIR$/src/test/java/units/ReleaseTest.java" />
-        <option value="$PROJECT_DIR$/resources/deneme.properties" />
+        <option value="$PROJECT_DIR$/src/main/java/app/RegexPatterns.java" />
       </list>
     </option>
   </component>
@@ -325,40 +248,59 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="PackagesPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CommentRemover" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CommentRemover" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CommentRemover" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CommentRemover" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
       <pane id="Scratches">
         <subPane>
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" />
               <option name="myItemType" value="com.intellij.ide.scratch.ScratchProjectViewPane$MyProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scope">
+        <subPane subId="Problems" />
+        <subPane subId="Production">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+        <subPane subId="Changed Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+        <subPane subId="Default">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+        <subPane subId="Tests">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="CommentRemover">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -549,49 +491,30 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope">
-        <subPane subId="Problems" />
-        <subPane subId="Production">
+      <pane id="PackagesPane">
+        <subPane>
           <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CommentRemover" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CommentRemover" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
             </PATH_ELEMENT>
           </PATH>
-        </subPane>
-        <subPane subId="Changed Files">
           <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CommentRemover" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
             </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-        <subPane subId="Project Files">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CommentRemover" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
             </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-        <subPane subId="Default">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-        <subPane subId="Tests">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="CommentRemover">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -606,7 +529,7 @@
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../SpotifyPuzzle" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../guava" />
     <property name="DefaultHtmlFileTemplate" value="Html5" />
     <property name="OverrideImplement.combined" value="true" />
     <property name="OverrideImplement.overriding.sorted" value="false" />
@@ -679,7 +602,7 @@
       <patterns />
       <method />
     </configuration>
-    <configuration default="false" name="RegexTest.testMultiAndSingle" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="PassingTest.testStringBuilder" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="units.*" />
@@ -690,8 +613,8 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="units" />
-      <option name="MAIN_CLASS_NAME" value="units.RegexTest" />
-      <option name="METHOD_NAME" value="testMultiAndSingle" />
+      <option name="MAIN_CLASS_NAME" value="units.PassingTest" />
+      <option name="METHOD_NAME" value="testStringBuilder" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -705,7 +628,7 @@
       <patterns />
       <method />
     </configuration>
-    <configuration default="false" name="RegexTest.testSingleLineComment" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="RegexTest.testSingle" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="units.*" />
@@ -717,7 +640,7 @@
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="units" />
       <option name="MAIN_CLASS_NAME" value="units.RegexTest" />
-      <option name="METHOD_NAME" value="testSingleLineComment" />
+      <option name="METHOD_NAME" value="testSingle" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -731,7 +654,7 @@
       <patterns />
       <method />
     </configuration>
-    <configuration default="false" name="ReleaseTest.testFileName" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="RegexTest.testNestedQuto" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="units.*" />
@@ -742,8 +665,8 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="units" />
-      <option name="MAIN_CLASS_NAME" value="units.ReleaseTest" />
-      <option name="METHOD_NAME" value="testFileName" />
+      <option name="MAIN_CLASS_NAME" value="units.RegexTest" />
+      <option name="METHOD_NAME" value="testNestedQuto" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -1054,17 +977,17 @@
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="JUnit.ReleaseTest.testExternalPath" />
       <item index="1" class="java.lang.String" itemvalue="JUnit.RegexTest.testDoubleQutoe" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.RegexTest.testMultiAndSingle" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.RegexTest.testSingleLineComment" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.ReleaseTest.testFileName" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.PassingTest.testStringBuilder" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.RegexTest.testSingle" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.RegexTest.testNestedQuto" />
     </list>
     <recent_temporary>
       <list size="5">
         <item index="0" class="java.lang.String" itemvalue="JUnit.ReleaseTest.testExternalPath" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.RegexTest.testDoubleQutoe" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.ReleaseTest.testFileName" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.RegexTest.testSingleLineComment" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.RegexTest.testMultiAndSingle" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.RegexTest.testNestedQuto" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.RegexTest.testSingle" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.PassingTest.testStringBuilder" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.RegexTest.testDoubleQutoe" />
       </list>
     </recent_temporary>
   </component>
@@ -1095,7 +1018,8 @@
       <workItem from="1432042816746" duration="26025000" />
       <workItem from="1432130207184" duration="57000" />
       <workItem from="1432130278336" duration="80000" />
-      <workItem from="1432130377951" duration="13655000" />
+      <workItem from="1432130377951" duration="15918000" />
+      <workItem from="1432203534148" duration="12865000" />
     </task>
     <task id="LOCAL-00001" summary="Little fixing">
       <created>1432123596107</created>
@@ -1103,15 +1027,21 @@
       <option name="project" value="LOCAL" />
       <updated>1432123596107</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="SingleLine bug fixing">
+      <created>1432158062929</created>
+      <option name="number" value="00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1432158062929</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="87519000" />
+    <option name="totallyTimeSpent" value="102647000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1119,13 +1049,14 @@
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32975295" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32967034" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32967034" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32959184" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.46632653" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.38265306" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.46530613" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.38190475" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26129428" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2607143" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32967034" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32857144" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1137,7 +1068,6 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Dynamic Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32857144" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1149,18 +1079,18 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32967034" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32967034" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Dynamic Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.39795917" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.37142858" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32857144" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32959184" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.46734694" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.46571428" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.38265306" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26129428" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32857144" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1180,17 +1110,33 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Little fixing" />
-    <option name="LAST_COMMIT_MESSAGE" value="Little fixing" />
+    <MESSAGE value="SingleLine bug fixing" />
+    <option name="LAST_COMMIT_MESSAGE" value="SingleLine bug fixing" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="32" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/app/FileProcessor.java</url>
+          <line>161</line>
+          <properties />
+          <option name="timeStamp" value="33" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/app/FileProcessor.java</url>
+          <line>236</line>
+          <properties />
+          <option name="timeStamp" value="34" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="35" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="JUnit">
         <watch expression="sFileContent" />
         <watch expression="foundToken" />
         <watch expression="Pattern.quote(foundToken)" />
+        <watch expression="isDoubleQuoteToken(foundToken)" />
       </configuration>
     </watches-manager>
   </component>
@@ -1199,20 +1145,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/test/java/units/FileVisitingTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/app/RegexPatterns.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="34" column="4" selection-start-line="34" selection-start-column="4" selection-end-line="34" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/utility/CommentUtility.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1252,13 +1184,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="22.740864">
           <caret line="1695" column="20" selection-start-line="1695" selection-start-column="20" selection-end-line="1695" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.7.0_67.jdk/Contents/Home/src.zip!/java/lang/System.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33333334">
-          <caret line="637" column="25" selection-start-line="637" selection-start-column="25" selection-end-line="637" selection-end-column="25" />
         </state>
       </provider>
     </entry>
@@ -1402,20 +1327,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/exception/CommentRemoverException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.15714286">
-          <caret line="11" column="1" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.7.0_67.jdk/Contents/Home/src.zip!/java/lang/StringBuilder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33333334">
-          <caret line="71" column="19" selection-start-line="71" selection-start-column="19" selection-end-line="71" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.7.0_67.jdk/Contents/Home/src.zip!/java/nio/file/FileVisitResult.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.17142858">
@@ -1448,7 +1359,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.1421801">
           <caret line="16" column="19" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1460,29 +1370,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.7.0_67.jdk/Contents/Home/src.zip!/java/lang/String.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.42752102">
-          <caret line="979" column="33" selection-start-line="979" selection-start-column="33" selection-end-line="979" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/dataset/VariableTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5829832">
           <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/units/RegexTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="36" column="29" selection-start-line="36" selection-start-column="29" selection-end-line="36" selection-end-column="29" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1498,38 +1389,548 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="8" column="12" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.7.0_67.jdk/Contents/Home/src.zip!/java/lang/System.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.6481094">
+          <caret line="489" column="30" selection-start-line="489" selection-start-column="30" selection-end-line="489" selection-end-column="30" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.7.0_67.jdk/Contents/Home/src.zip!/java/lang/String.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7615546">
+          <caret line="2746" column="20" selection-start-line="2746" selection-start-column="20" selection-end-line="2746" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/exception/CommentRemoverException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.17331932">
+          <caret line="11" column="1" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.7.0_67.jdk/Contents/Home/src.zip!/java/lang/Thread.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.0952381">
+          <caret line="911" column="17" selection-start-line="911" selection-start-column="7" selection-end-line="911" selection-end-column="17" />
+          <folding>
+            <marker date="1406257814000" expanded="false" signature="-1:-1" placeholder="/.../" />
+            <marker date="1406257814000" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="//..." />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="//..." />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="//..." />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257814000" expanded="false" signature="-1:-1" placeholder="(PrivilegedAction) () → {" />
+            <marker date="1406257814000" expanded="false" signature="-1:-1" placeholder="}" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/app/CommentRemover.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.44285715">
+          <caret line="164" column="59" selection-start-line="164" selection-start-column="59" selection-end-line="164" selection-end-column="59" />
+          <folding>
+            <marker date="1432206266000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1432206266000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1432206266000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1432206266000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1432206266000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1432206266000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1432206266000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1432206266000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1432206266000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1432206266000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1432206266000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1432206266000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1432206266000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1432206266000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1432206266000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1432206266000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1432206266000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1432206266000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1432206266000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1432206266000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1432206266000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1432206266000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1432206266000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1432206266000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1432206266000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1432206266000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1432206266000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1432206266000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1432206266000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1432206266000" expanded="true" signature="-1:-1" placeholder="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/utility/CommentUtility.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="42" column="52" selection-start-line="42" selection-start-column="52" selection-end-line="42" selection-end-column="52" />
-          <folding />
+        <state vertical-scroll-proportion="0.14285715">
+          <caret line="10" column="30" selection-start-line="10" selection-start-column="30" selection-end-line="10" selection-end-column="30" />
+          <folding>
+            <marker date="1432206993000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1432206993000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1432206993000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1432206993000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1432206993000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1432206993000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1432206993000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1432206993000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1432206993000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1432206993000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1432206993000" expanded="true" signature="-1:-1" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/units/PassingTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2">
+          <caret line="14" column="37" selection-start-line="14" selection-start-column="37" selection-end-line="14" selection-end-column="37" />
+          <folding>
+            <marker date="1432207848000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1432207848000" expanded="true" signature="-1:-1" placeholder="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/handling/UserInputHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="69" column="68" selection-start-line="69" selection-start-column="68" selection-end-line="69" selection-end-column="68" />
-          <folding />
+        <state vertical-scroll-proportion="0.7">
+          <caret line="53" column="78" selection-start-line="53" selection-start-column="78" selection-end-line="53" selection-end-column="78" />
+          <folding>
+            <marker date="1432206993000" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1432206993000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1432206993000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1432206993000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1432206993000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1432206993000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1432206993000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1432206993000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1432206993000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1432206993000" expanded="true" signature="-1:-1" placeholder="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/units/ReleaseTest.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/app/CommentProcessor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="35" column="63" selection-start-line="35" selection-start-column="63" selection-end-line="35" selection-end-column="63" />
-          <folding />
+        <state vertical-scroll-proportion="0.5714286">
+          <caret line="161" column="0" selection-start-line="161" selection-start-column="0" selection-end-line="161" selection-end-column="0" />
+          <folding>
+            <marker date="1432208090000" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1432208090000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1432208090000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1432208090000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1432208090000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1432208090000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1432208090000" expanded="false" signature="-1:-1" placeholder="(Runnable) () → {" />
+            <marker date="1432208090000" expanded="false" signature="-1:-1" placeholder="}" />
+            <marker date="1432208090000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1432208090000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1432208090000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1432208090000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1432208090000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1432208090000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1432208090000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1432208090000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1432208090000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1432208090000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1432208090000" expanded="true" signature="-1:-1" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.7.0_67.jdk/Contents/Home/src.zip!/java/lang/StringBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.34761906">
+          <caret line="131" column="17" selection-start-line="131" selection-start-column="17" selection-end-line="131" selection-end-column="17" />
+          <folding>
+            <marker date="1406257814000" expanded="false" signature="-1:-1" placeholder="/.../" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257814000" expanded="true" signature="-1:-1" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.7.0_67.jdk/Contents/Home/src.zip!/java/lang/AbstractStringBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="5.490476">
+          <caret line="411" column="33" selection-start-line="411" selection-start-column="33" selection-end-line="411" selection-end-column="33" />
+          <folding>
+            <marker date="1406257812000" expanded="false" signature="-1:-1" placeholder="/.../" />
+            <marker date="1406257812000" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1406257812000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257812000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257812000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257812000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257812000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257812000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257812000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257812000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257812000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257812000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257812000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257812000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257812000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257812000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257812000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257812000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257812000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257812000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257812000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257812000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257812000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257812000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257812000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257812000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257812000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257812000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257812000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257812000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257812000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257812000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257812000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257812000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257812000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257812000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257812000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257812000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257812000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257812000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257812000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257812000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257812000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257812000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257812000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257812000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257812000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257812000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257812000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257812000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257812000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257812000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257812000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257812000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257812000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257812000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257812000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257812000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257812000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257812000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257812000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257812000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257812000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257812000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257812000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257812000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257812000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257812000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257812000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257812000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257812000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257812000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257812000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257812000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257812000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257812000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257812000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257812000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257812000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257812000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257812000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257812000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257812000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257812000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257812000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257812000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257812000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257812000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257812000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257812000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257812000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257812000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257812000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257812000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257812000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257812000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257812000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257812000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257812000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257812000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257812000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257812000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257812000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257812000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257812000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257812000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257812000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257812000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257812000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1406257812000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257812000" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1406257812000" expanded="true" signature="-1:-1" placeholder="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/handling/RegexSelector.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state vertical-scroll-proportion="0.18181819">
           <caret line="10" column="25" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="25" />
+          <folding>
+            <marker date="1432204609000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1432204609000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1432204609000" expanded="true" signature="-1:-1" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/units/RegexTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.85714287">
+          <caret line="82" column="41" selection-start-line="82" selection-start-column="40" selection-end-line="82" selection-end-column="44" />
+          <folding>
+            <marker date="1432210819000" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1432210819000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1432210819000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1432210819000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1432210819000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1432210819000" expanded="true" signature="-1:-1" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/app/FileProcessor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="236" column="19" selection-start-line="236" selection-start-column="19" selection-end-line="236" selection-end-column="19" />
           <folding />
         </state>
       </provider>
@@ -1537,34 +1938,15 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/app/RegexPatterns.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/app/CommentRemover.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/units/ReleaseTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="158" column="37" selection-start-line="158" selection-start-column="37" selection-end-line="158" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/app/CommentProcessor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-          <folding>
-            <element signature="e#1569#2207#0" expanded="true" />
-            <element signature="e#2206#2207#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/app/FileProcessor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.10398614">
-          <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+        <state vertical-scroll-proportion="0.42542017">
+          <caret line="29" column="41" selection-start-line="29" selection-start-column="41" selection-end-line="29" selection-end-column="41" />
           <folding />
         </state>
       </provider>
