@@ -3,7 +3,7 @@
 CommentRemover is a source code comment removing library for Java&trade; 7 and above.<br><br>
 It also supports JavaScript , HTML , CSS , Properties , JSP and XML Comments.
 
-# Requirements CommentRemover
+# Requirements
 
 Projects that include CommentRemover need to target Java 1.7 at minimum.<br>
 Please increase your stack size to 40m.<br>
