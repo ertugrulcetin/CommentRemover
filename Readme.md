@@ -33,24 +33,24 @@ CommentRemover does _not_  depend on any libraries, you can easily add it as sta
 
 ~~~~~ java
 
-	public class Test {
+public class Test {
     
-        public static void main(String[] args) {
+ public static void main(String[] args) {
         
-        //root dir is: /Users/user/JavaProject/MyProject
+ //root dir is: /Users/user/JavaProject/MyProject
     
-            CommentRemover commentRemover = new CommentRemover.CommentRemoverBuilder()
-                    .removeJava(true) //Remove Java file Comments....
-                    .removeJavaScript(true) //Remove JavaScript file Comments....
-                    .removeJSP(true) ..
-                    .removeTodos(false) // Do Not Touch Todos (leave them alone)
-                    .removeSingleLines(true) //Remove single line type comments
-                    .removeMultiLines(true) //Remove multiple type comments
-                    .startInternalPath("") // leave it empty string when you want to start to root dir
-                    .setExcludePackages(new String[]{"src.main.java.app.pattern"}) // rootDir/src/main/java/app/pattern skip this directory
-                    .build();
+ CommentRemover commentRemover = new CommentRemover.CommentRemoverBuilder()
+                .removeJava(true) //Remove Java file Comments....
+                .removeJavaScript(true) //Remove JavaScript file Comments....
+                .removeJSP(true) ..
+                .removeTodos(false) // Do Not Touch Todos (leave them alone)
+                .removeSingleLines(true) //Remove single line type comments
+                .removeMultiLines(true) //Remove multiple type comments
+                .startInternalPath("") // leave it empty string when you want to start to root dir
+                .setExcludePackages(new String[]{"src.main.java.app.pattern"}) // rootDir/src/main/java/app/pattern skip this directory
+                .build();
         }
-    }
+}
 
 
 
