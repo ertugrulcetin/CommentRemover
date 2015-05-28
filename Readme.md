@@ -37,7 +37,8 @@ public class Test {
     
  public static void main(String[] args) throws CommentRemoverException {
         
- //root dir is: /Users/user/JavaProject/MyProject
+ //root dir is: /Users/user/Projects/MyProject
+ //example for **startInternalPath**
     
  CommentRemover commentRemover = new CommentRemover.CommentRemoverBuilder()
         .removeJava(true) //Remove Java file Comments....
@@ -48,6 +49,28 @@ public class Test {
         .removeMultiLines(true) //Remove multiple type comments
         .startInternalPath("src.main.app") // starts from rootDir/src/main/app , leave it empty string when you want to start from root dir
         .setExcludePackages(new String[]{"src.main.java.app.pattern"}) // rootDir/src/main/java/app/pattern skip this directory
+        .build();
+        
+ CommentProcessor commentProcessor = new CommentProcessor(commentRemover);
+                  commentProcessor.start();        
+  }
+}
+
+public class Test {
+    
+ public static void main(String[] args) throws CommentRemoverException {
+
+ //example for *externalInternalPath**
+    
+ CommentRemover commentRemover = new CommentRemover.CommentRemoverBuilder()
+        .removeJava(true) //Remove Java file Comments....
+        .removeJavaScript(true) //Remove JavaScript file Comments....
+        .removeJSP(true) //etc..
+        .removeTodos(true) // remove todos
+        .removeSingleLines(false) //Do not remove single line type comments
+        .removeMultiLines(true) //Remove multiple type comments
+        .startExternalPath("/Users/user/Projects/MyOtherProject")//give it full path for external directories
+        .setExcludePackages(new String[]{"src.main.java.model"}) //refers to /Users/user/Projects/MyOtherProject/src/main/java/model and skips this directory.
         .build();
         
  CommentProcessor commentProcessor = new CommentProcessor(commentRemover);
