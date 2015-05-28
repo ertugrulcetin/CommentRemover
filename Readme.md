@@ -8,7 +8,6 @@ It also supports JavaScript , HTML , CSS , Properties , JSP and XML Comments.
 
 Projects that include CommentRemover need to target Java 1.7 at minimum.
 
-
 # Installation - Maven
 In your `pom.xml`, you must add repository and dependency for **CommentRemover**. 
 
@@ -17,6 +16,7 @@ In your `pom.xml`, you must add repository and dependency for **CommentRemover**
 	    <id>jitpack.io</id>
 	    <url>https://jitpack.io</url>
 	</repository>
+	
 	<dependency>
     	    <groupId>com.github.ertugrulcetin</groupId>
     	    <artifactId>CommentRemover</artifactId>
