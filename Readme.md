@@ -71,8 +71,8 @@ public class InternalPathExample {
         .removeTodos(false) //  Do Not Touch Todos (leave them alone)
         .removeSingleLines(true) // Remove single line type comments
         .removeMultiLines(true) // Remove multiple type comments
-        .startInternalPath("src.main.app") // Starts from rootDir/src/main/app , leave it empty string when you want to start from root dir
-        .setExcludePackages(new String[]{"src.main.java.app.pattern"}) // Refers to rootDir/src/main/java/app/pattern and skips this directory
+        .startInternalPath("src.main.app") // Starts from {rootDir}/src/main/app , leave it empty string when you want to start from root dir
+        .setExcludePackages(new String[]{"src.main.java.app.pattern"}) // Refers to {rootDir}/src/main/java/app/pattern and skips this directory
         .build();
         
  CommentProcessor commentProcessor = new CommentProcessor(commentRemover);
