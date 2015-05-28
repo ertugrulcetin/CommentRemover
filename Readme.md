@@ -33,7 +33,7 @@ CommentRemover does _not_  depend on any libraries, you can easily add it as sta
 
 ~~~~~ java
 
-public class Test {
+public class InternalPathExample {
     
  public static void main(String[] args) throws CommentRemoverException {
         
@@ -56,7 +56,7 @@ public class Test {
   }
 }
 
-public class Test {
+public class ExternalPathExample {
     
  public static void main(String[] args) throws CommentRemoverException {
 
