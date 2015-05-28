@@ -7,18 +7,20 @@ CommentRemover does _not_  depend on any libraries, you can easily add it as sta
 
 # Requirements
 
-Projects that include CommentRemover need to target Java 1.7 at minimum.<br>
+Projects that include CommentRemover need to target Java 1.7 at minimum.<br><br>
 Please increase your stack size to 40m.<br>
 VM option command is: -Xss40m if you need to increase more -Xss{size}m<br>
 
-# Installation - Maven
+# Installation
+##Maven
 In your `pom.xml`, you must add **Repository** and **Dependency** for **CommentRemover**.<br><br>
 After adding dependency run `mvn clean install` command and make sure that maven clean and install processes are completed. 
 
 ```xml
+
 	<repository>
 	    <id>jitpack.io</id>
-	    <url>https:// jitpack.io</url>
+	    <url>https://jitpack.io</url>
 	</repository>
 	
 	<dependency>
@@ -28,6 +30,28 @@ After adding dependency run `mvn clean install` command and make sure that maven
     </dependency>
     	
 ```
+##Gradle
+In your `gradle` file, you must add **Repository** and **Dependency** for **CommentRemover**.<br><br>
+
+```gradle
+
+    repositories {
+    	    maven {
+    	        url "https://jitpack.io"
+    	    }
+    	}    
+   
+```
+
+```gradle
+
+     dependencies {
+	        compile 'com.github.ertugrulcetin:CommentRemover:1.0'
+	}
+   
+```
+
+
 
 # Usage
 
