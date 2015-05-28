@@ -5,7 +5,9 @@ It also supports JavaScript , HTML , CSS , Properties , JSP and XML Comments.
 
 # Requirements CommentRemover
 
-Projects that include CommentRemover need to target Java 1.7 at minimum.
+Projects that include CommentRemover need to target Java 1.7 at minimum.<br>
+Please increase your stack size to 40m.<br>
+VM option command is: -Xss40m if you need to increase more -Xss{size}m<br>
 
 # Installation - Maven
 In your `pom.xml`, you must add **Repository** and **Dependency** for **CommentRemover**. 
