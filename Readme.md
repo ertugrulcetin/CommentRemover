@@ -21,7 +21,7 @@ In your `pom.xml`, you must add **Repository** and **Dependency** for **CommentR
 	<dependency>
     	    <groupId>com.github.ertugrulcetin</groupId>
     	    <artifactId>CommentRemover</artifactId>
-    	    <version>v1.0</version>
+    	    <version>1.0</version>
     </dependency>
     	
 ```
@@ -58,6 +58,12 @@ public class InternalPathExample {
   }
 }
 
+~~~~~
+
+<br>
+
+~~~~~ java
+
 public class ExternalPathExample {
     
  public static void main(String[] args) throws CommentRemoverException {
@@ -80,6 +86,7 @@ public class ExternalPathExample {
   }
 }
 
-
-
 ~~~~~
+
+
+
