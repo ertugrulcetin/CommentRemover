@@ -35,20 +35,23 @@ CommentRemover does _not_  depend on any libraries, you can easily add it as sta
 
 public class Test {
     
- public static void main(String[] args) {
+ public static void main(String[] args) throws CommentRemoverException {
         
  //root dir is: /Users/user/JavaProject/MyProject
     
  CommentRemover commentRemover = new CommentRemover.CommentRemoverBuilder()
         .removeJava(true) //Remove Java file Comments....
         .removeJavaScript(true) //Remove JavaScript file Comments....
-        .removeJSP(true) ..
+        .removeJSP(true) //etc..
         .removeTodos(false) // Do Not Touch Todos (leave them alone)
         .removeSingleLines(true) //Remove single line type comments
         .removeMultiLines(true) //Remove multiple type comments
-        .startInternalPath("src.main.app") // starts from rootDir/src/main/app , leave it empty string when you want to start to root dir
+        .startInternalPath("src.main.app") // starts from rootDir/src/main/app , leave it empty string when you want to start from root dir
         .setExcludePackages(new String[]{"src.main.java.app.pattern"}) // rootDir/src/main/java/app/pattern skip this directory
         .build();
+        
+ CommentProcessor commentProcessor = new CommentProcessor(commentRemover);
+                  commentProcessor.start();        
   }
 }
 
