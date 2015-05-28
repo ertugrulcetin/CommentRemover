@@ -10,12 +10,13 @@ Please increase your stack size to 40m.<br>
 VM option command is: -Xss40m if you need to increase more -Xss{size}m<br>
 
 # Installation - Maven
-In your `pom.xml`, you must add **Repository** and **Dependency** for **CommentRemover**. 
+In your `pom.xml`, you must add **Repository** and **Dependency** for **CommentRemover**.
+After adding dependency run `mvn clean install` command and make sure that maven clean and install processes completed. 
 
 ```xml
 	<repository>
 	    <id>jitpack.io</id>
-	    <url>https://jitpack.io</url>
+	    <url>https:// jitpack.io</url>
 	</repository>
 	
 	<dependency>
@@ -39,18 +40,18 @@ public class InternalPathExample {
     
  public static void main(String[] args) throws CommentRemoverException {
         
- //root dir is: /Users/user/Projects/MyProject
- //example for startInternalPath
+ // root dir is: /Users/user/Projects/MyProject
+ // example for startInternalPath
     
  CommentRemover commentRemover = new CommentRemover.CommentRemoverBuilder()
-        .removeJava(true) //Remove Java file Comments....
-        .removeJavaScript(true) //Remove JavaScript file Comments....
-        .removeJSP(true) //etc..
-        .removeTodos(false) // Do Not Touch Todos (leave them alone)
-        .removeSingleLines(true) //Remove single line type comments
-        .removeMultiLines(true) //Remove multiple type comments
-        .startInternalPath("src.main.app") // starts from rootDir/src/main/app , leave it empty string when you want to start from root dir
-        .setExcludePackages(new String[]{"src.main.java.app.pattern"}) // rootDir/src/main/java/app/pattern skip this directory
+        .removeJava(true) // Remove Java file Comments....
+        .removeJavaScript(true) // Remove JavaScript file Comments....
+        .removeJSP(true) // etc.. goes like that
+        .removeTodos(false) //  Do Not Touch Todos (leave them alone)
+        .removeSingleLines(true) // Remove single line type comments
+        .removeMultiLines(true) // Remove multiple type comments
+        .startInternalPath("src.main.app") // Starts from rootDir/src/main/app , leave it empty string when you want to start from root dir
+        .setExcludePackages(new String[]{"src.main.java.app.pattern"}) // Refers to rootDir/src/main/java/app/pattern and skips this directory
         .build();
         
  CommentProcessor commentProcessor = new CommentProcessor(commentRemover);
@@ -60,25 +61,23 @@ public class InternalPathExample {
 
 ~~~~~
 
-<br>
-
 ~~~~~ java
 
 public class ExternalPathExample {
     
  public static void main(String[] args) throws CommentRemoverException {
 
- //example for externalInternalPath
+ // example for externalInternalPath
     
  CommentRemover commentRemover = new CommentRemover.CommentRemoverBuilder()
-        .removeJava(true) //Remove Java file Comments....
-        .removeJavaScript(true) //Remove JavaScript file Comments....
-        .removeJSP(true) //etc..
-        .removeTodos(true) // remove todos
-        .removeSingleLines(false) //Do not remove single line type comments
-        .removeMultiLines(true) //Remove multiple type comments
-        .startExternalPath("/Users/user/Projects/MyOtherProject")//give it full path for external directories
-        .setExcludePackages(new String[]{"src.main.java.model"}) //refers to /Users/user/Projects/MyOtherProject/src/main/java/model and skips this directory.
+        .removeJava(true) // Remove Java file Comments....
+        .removeJavaScript(true) // Remove JavaScript file Comments....
+        .removeJSP(true) // etc..
+        .removeTodos(true) // Remove todos
+        .removeSingleLines(false) // Do not remove single line type comments
+        .removeMultiLines(true) // Remove multiple type comments
+        .startExternalPath("/Users/user/Projects/MyOtherProject")// Give it full path for external directories
+        .setExcludePackages(new String[]{"src.main.java.model"}) // Refers to /Users/user/Projects/MyOtherProject/src/main/java/model and skips this directory.
         .build();
         
  CommentProcessor commentProcessor = new CommentProcessor(commentRemover);
