@@ -38,7 +38,7 @@ public class Test {
  public static void main(String[] args) throws CommentRemoverException {
         
  //root dir is: /Users/user/Projects/MyProject
- //example for **startInternalPath**
+ //example for startInternalPath
     
  CommentRemover commentRemover = new CommentRemover.CommentRemoverBuilder()
         .removeJava(true) //Remove Java file Comments....
@@ -60,7 +60,7 @@ public class Test {
     
  public static void main(String[] args) throws CommentRemoverException {
 
- //example for *externalInternalPath**
+ //example for externalInternalPath
     
  CommentRemover commentRemover = new CommentRemover.CommentRemoverBuilder()
         .removeJava(true) //Remove Java file Comments....
