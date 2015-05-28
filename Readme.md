@@ -47,7 +47,7 @@ In your `gradle` file, you must add **Repository** and **Dependency** for **Comm
 
      dependencies {
 	        compile 'com.github.ertugrulcetin:CommentRemover:1.0'
-	}
+	   }
    
 ```
 
