@@ -1,6 +1,0 @@
-units/ReleaseTest.class
-dataset/VariableTest.class
-units/UserInputHandlerTest.class
-units/FileVisitingTest.class
-units/CaseInsensitiveTest.class
-units/RegexTest.class
