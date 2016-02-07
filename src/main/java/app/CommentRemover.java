@@ -16,6 +16,9 @@ public final class CommentRemover {
     private boolean removeMultiLines;
     private boolean removeSingleLines;
 
+    private boolean preserveJavaClassHeaders;
+    private boolean preserveCopyRightHeaders;
+
     private String startInternalPath;
     private String startExternalPath;
     private String[] excludePackages;
@@ -34,6 +37,8 @@ public final class CommentRemover {
         this.startInternalPath = commentRemoverBuilder.startInternalPath;
         this.startExternalPath = commentRemoverBuilder.startExternalPath;
         this.excludePackages = commentRemoverBuilder.excludePackages;
+        this.preserveJavaClassHeaders = commentRemoverBuilder.preserveJavaClassHeaders;
+        this.preserveCopyRightHeaders = commentRemoverBuilder.preserveCopyRightHeaders;
     }
 
     public boolean isRemoveCSS() {
@@ -66,6 +71,14 @@ public final class CommentRemover {
 
     public boolean isRemoveTodos() {
         return removeTodos;
+    }
+
+    public boolean isPreserveJavaClassHeaders() {
+        return preserveJavaClassHeaders;
+    }
+
+    public boolean isPreserveCopyrightHeaders() {
+        return preserveCopyRightHeaders;
     }
 
     public boolean isRemoveMultiLines() {
@@ -101,6 +114,9 @@ public final class CommentRemover {
         private boolean removeTodos = true;
         private boolean removeMultiLines = false;
         private boolean removeSingleLines = false;
+
+        private boolean preserveJavaClassHeaders = true;
+        private boolean preserveCopyRightHeaders = true;
 
         private String startInternalPath = null;
         private String startExternalPath = null;
@@ -171,6 +187,16 @@ public final class CommentRemover {
             return this;
         }
 
+        public CommentRemoverBuilder preserveJavaClassHeaders(boolean preserveJavaClassHeaders) {
+            this.preserveJavaClassHeaders = preserveJavaClassHeaders;
+            return this;
+        }
+
+        public CommentRemoverBuilder preserveCopyRightHeaders(boolean preserveCopyRightHeaders) {
+            this.preserveCopyRightHeaders = preserveCopyRightHeaders;
+            return this;
+        }
+
         public CommentRemover build() {
             return new CommentRemover(this);
         }
@@ -189,6 +215,8 @@ public final class CommentRemover {
                 ", removeTodos=" + removeTodos +
                 ", removeMultiLines=" + removeMultiLines +
                 ", removeSingleLines=" + removeSingleLines +
+                ", preserveJavaClassHeaders=" + preserveJavaClassHeaders +
+                ", preserveCopyRightHeaders=" + preserveCopyRightHeaders +
                 ", startInternalPath='" + startInternalPath + '\'' +
                 ", startExternalPath='" + startExternalPath + '\'' +
                 ", excludePackages=" + Arrays.toString(excludePackages) +

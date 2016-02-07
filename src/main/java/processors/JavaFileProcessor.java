@@ -1,9 +1,5 @@
 package processors;
 
-import app.CommentRemover;
-import exception.CommentRemoverException;
-import handling.RegexSelector;
-
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
@@ -12,6 +8,10 @@ import java.io.InputStreamReader;
 import java.util.UUID;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+import app.CommentRemover;
+import exception.CommentRemoverException;
+import handling.RegexSelector;
 
 public class JavaFileProcessor extends AbstractFileProcessor {
 
@@ -38,7 +38,8 @@ public class JavaFileProcessor extends AbstractFileProcessor {
 
     @Override
     protected StringBuilder getFileContent(File file) throws IOException, CommentRemoverException {
-        return isGoingToRemoveSingleComments() ? this.getContentForSingleLinesRemoving(file) : super.getPlainFileContent(file);
+        return isGoingToRemoveSingleComments() ? this.getContentForSingleLinesRemoving(file)
+                : super.getPlainFileContent(file);
     }
 
     private boolean isGoingToRemoveSingleComments() {
@@ -65,17 +66,30 @@ public class JavaFileProcessor extends AbstractFileProcessor {
     }
 
     @Override
-    protected StringBuilder doRemoveOperation(StringBuilder fileContent, Matcher matcher) throws StackOverflowError{
+    protected StringBuilder doRemoveOperation(StringBuilder fileContent, Matcher matcher) throws StackOverflowError {
 
         String sFileContent = fileContent.toString();
         boolean isTodosRemoving = commentRemover.isRemoveTodos();
         boolean isBothCommentTypeNotSelected = isBothCommentTypeNotSelected();
+        boolean isPreserveJavaClassHeader = commentRemover.isPreserveJavaClassHeaders();
+        boolean isPreserveCopyrightHeaders = commentRemover.isPreserveCopyrightHeaders();
         while (matcher.find()) {
 
             String foundToken = matcher.group();
 
             if (isDoubleOrSingleQuoteToken(foundToken)) {
                 continue;
+            }
+
+            if (isPreserveJavaClassHeader) {
+                if (isClassHeader(foundToken)) {
+                    continue;
+                }
+            }
+            if (isPreserveCopyrightHeaders) {
+                if (isCopyRightHeader(foundToken)) {
+                    continue;
+                }
             }
 
             if (isBothCommentTypeNotSelected) {
@@ -94,7 +108,8 @@ public class JavaFileProcessor extends AbstractFileProcessor {
             } else {
 
                 if (isSingleLineTodoToken(foundToken)) {
-                    sFileContent = sFileContent.replaceFirst(Pattern.quote(foundToken), foundToken.replace("//", singleLineTodoCommentEscapePrefix));
+                    sFileContent = sFileContent.replaceFirst(Pattern.quote(foundToken),
+                            foundToken.replace("//", singleLineTodoCommentEscapePrefix));
                 }
 
                 if (!isContainTodo(foundToken)) {
@@ -109,9 +124,8 @@ public class JavaFileProcessor extends AbstractFileProcessor {
 
         fileContent = new StringBuilder(sFileContent);
 
-
-    return fileContent;
-}
+        return fileContent;
+    }
 
     private boolean isBothCommentTypeNotSelected() {
         return !(commentRemover.isRemoveSingleLines() && commentRemover.isRemoveMultiLines());
@@ -139,5 +153,13 @@ public class JavaFileProcessor extends AbstractFileProcessor {
 
     private boolean isSingleLineTodoToken(String foundToken) {
         return isSingleCommentToken(foundToken) && isContainTodo(foundToken);
+    }
+
+    private boolean isCopyRightHeader(String foundToken) {
+        return Pattern.compile(Pattern.quote("copyright"), Pattern.CASE_INSENSITIVE).matcher(foundToken).find();
+    }
+
+    private boolean isClassHeader(String foundToken) {
+        return Pattern.compile(Pattern.quote("author"), Pattern.CASE_INSENSITIVE).matcher(foundToken).find();
     }
 }
