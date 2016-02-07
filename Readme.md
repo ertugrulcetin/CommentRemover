@@ -26,7 +26,7 @@ After adding dependency run `mvn clean install` command and make sure that maven
 	<dependency>
     	    <groupId>com.github.ertugrulcetin</groupId>
     	    <artifactId>CommentRemover</artifactId>
-    	    <version>1.0</version>
+    	    <version>1.1</version>
     </dependency>
     	
 ```
@@ -46,7 +46,7 @@ In your `gradle` file, you must add **Repository** and **Dependency** for **Comm
 ```gradle
 
      dependencies {
-	        compile 'com.github.ertugrulcetin:CommentRemover:1.0'
+	        compile 'com.github.ertugrulcetin:CommentRemover:1.1'
 	   }
    
 ```
