@@ -1,4 +1,4 @@
-package exception;
+package com.commentremover.exception;
 
 public class CommentRemoverException extends Exception {
 

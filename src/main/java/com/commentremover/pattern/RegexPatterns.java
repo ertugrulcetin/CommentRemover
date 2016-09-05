@@ -1,4 +1,4 @@
-package pattern;
+package com.commentremover.pattern;
 
 public class RegexPatterns {
 

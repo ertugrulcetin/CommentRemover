@@ -1,4 +1,4 @@
-package app;
+package com.commentremover.app;
 
 import java.util.Arrays;
 

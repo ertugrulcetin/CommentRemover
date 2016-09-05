@@ -1,4 +1,4 @@
-package utility;
+package com.commentremover.utility;
 
 public class CommentUtility {
 
