@@ -1,6 +1,6 @@
-package handling;
+package com.commentremover.handling;
 
-import pattern.RegexPatterns;
+import com.commentremover.pattern.RegexPatterns;
 
 public class RegexSelector {
 

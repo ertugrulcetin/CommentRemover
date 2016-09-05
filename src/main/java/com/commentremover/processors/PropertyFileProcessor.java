@@ -1,8 +1,8 @@
-package processors;
+package com.commentremover.processors;
 
-import app.CommentRemover;
-import exception.CommentRemoverException;
-import handling.RegexSelector;
+import com.commentremover.app.CommentRemover;
+import com.commentremover.exception.CommentRemoverException;
+import com.commentremover.handling.RegexSelector;
 
 import java.io.BufferedReader;
 import java.io.File;

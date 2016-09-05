@@ -1,8 +1,8 @@
-package handling;
+package com.commentremover.handling;
 
-import app.CommentRemover;
-import exception.CommentRemoverException;
-import utility.CommentUtility;
+import com.commentremover.app.CommentRemover;
+import com.commentremover.exception.CommentRemoverException;
+import com.commentremover.utility.CommentUtility;
 
 import java.io.File;
 

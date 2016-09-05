@@ -1,14 +1,14 @@
-package app;
+package com.commentremover.app;
 
-import exception.CommentRemoverException;
-import processors.CSSFileProcessor;
-import processors.HTMLFileProcessor;
-import processors.JSPFileProcessor;
-import processors.JavaFileProcessor;
-import processors.JavaScriptFileProcessor;
-import processors.PropertyFileProcessor;
-import processors.XMLFileProcessor;
-import utility.CommentUtility;
+import com.commentremover.exception.CommentRemoverException;
+import com.commentremover.processors.CSSFileProcessor;
+import com.commentremover.processors.HTMLFileProcessor;
+import com.commentremover.processors.JSPFileProcessor;
+import com.commentremover.processors.JavaFileProcessor;
+import com.commentremover.processors.JavaScriptFileProcessor;
+import com.commentremover.processors.PropertyFileProcessor;
+import com.commentremover.processors.XMLFileProcessor;
+import com.commentremover.utility.CommentUtility;
 
 import java.io.IOException;
 

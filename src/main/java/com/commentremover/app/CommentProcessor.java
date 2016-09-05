@@ -1,8 +1,8 @@
-package app;
+package com.commentremover.app;
 
-import exception.CommentRemoverException;
-import handling.UserInputHandler;
-import utility.CommentUtility;
+import com.commentremover.exception.CommentRemoverException;
+import com.commentremover.handling.UserInputHandler;
+import com.commentremover.utility.CommentUtility;
 
 import java.io.IOException;
 import java.nio.file.FileVisitResult;

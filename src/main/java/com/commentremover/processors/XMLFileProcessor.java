@@ -1,19 +1,19 @@
-package processors;
+package com.commentremover.processors;
 
-import app.CommentRemover;
-import exception.CommentRemoverException;
-import handling.RegexSelector;
+import com.commentremover.app.CommentRemover;
+import com.commentremover.exception.CommentRemoverException;
+import com.commentremover.handling.RegexSelector;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class CSSFileProcessor extends AbstractFileProcessor {
+public class XMLFileProcessor extends AbstractFileProcessor {
 
-    private static final String regex = RegexSelector.getRegexByFileType("css");
+    private static final String regex = RegexSelector.getRegexByFileType("xml");
 
-    public CSSFileProcessor(CommentRemover commentRemover) {
+    public XMLFileProcessor(CommentRemover commentRemover) {
         super(commentRemover);
     }
 
@@ -29,17 +29,12 @@ public class CSSFileProcessor extends AbstractFileProcessor {
 
     @Override
     protected StringBuilder doRemoveOperation(StringBuilder fileContent, Matcher matcher) throws StackOverflowError{
-
         String sFileContent = fileContent.toString();
         boolean isTodosRemoving = commentRemover.isRemoveTodos();
 
         while (matcher.find()) {
 
             String foundToken = matcher.group();
-
-            if (isDoubleOrSingleQuoteToken(foundToken)) {
-                continue;
-            }
 
             if (isTodosRemoving) {
                 sFileContent = sFileContent.replaceFirst(Pattern.quote(foundToken), "");
@@ -49,14 +44,8 @@ public class CSSFileProcessor extends AbstractFileProcessor {
                 }
             }
         }
-
         fileContent = new StringBuilder(sFileContent);
 
-
         return fileContent;
-    }
-
-    private boolean isDoubleOrSingleQuoteToken(String foundToken) {
-        return foundToken.startsWith("\"") || foundToken.startsWith("\'");
     }
 }

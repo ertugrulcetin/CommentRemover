@@ -1,4 +1,4 @@
-package processors;
+package com.commentremover.processors;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -9,9 +9,9 @@ import java.util.UUID;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import app.CommentRemover;
-import exception.CommentRemoverException;
-import handling.RegexSelector;
+import com.commentremover.app.CommentRemover;
+import com.commentremover.exception.CommentRemoverException;
+import com.commentremover.handling.RegexSelector;
 
 public class JavaFileProcessor extends AbstractFileProcessor {
 

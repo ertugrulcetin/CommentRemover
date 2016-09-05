@@ -1,6 +1,6 @@
-package processors;
+package com.commentremover.processors;
 
-import app.CommentRemover;
+import com.commentremover.app.CommentRemover;
 
 public class HTMLFileProcessor extends XMLFileProcessor {
 
