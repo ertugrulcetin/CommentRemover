@@ -12,7 +12,7 @@ Please increase your stack size to 40m.<br>
 VM option command is: -Xss40m if you need to increase more -Xss{size}m<br>
 
 # Installation
-##Maven
+## Maven
 In your `pom.xml`, you must add **Repository** and **Dependency** for **CommentRemover**.<br><br>
 After adding dependency run `mvn clean install` command and make sure that maven clean and install processes are completed. 
 
@@ -30,7 +30,7 @@ After adding dependency run `mvn clean install` command and make sure that maven
     </dependency>
     	
 ```
-##Gradle
+## Gradle
 In your `gradle` file, you must add **Repository** and **Dependency** for **CommentRemover**.<br><br>
 
 ```gradle
