@@ -34,10 +34,17 @@ public class CommentProcessor {
 
     public void start() throws CommentRemoverException, StackOverflowError {
         checkAllStates();
-        displayProcessStarted();
-        displayProcessProgressByDots();
+
+        if (this.commentRemover.isVerbose()) {
+            displayProcessStarted();
+            displayProcessProgressByDots();
+        }
+
         doProcess();
-        displayProcessSuccessfullyDone();
+
+        if (this.commentRemover.isVerbose()) {
+            displayProcessSuccessfullyDone();
+        }
     }
 
     private void displayProcessStarted() {

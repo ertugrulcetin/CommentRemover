@@ -22,6 +22,7 @@ public final class CommentRemover {
     private String startInternalPath;
     private String startExternalPath;
     private String[] excludePackages;
+    private boolean verbose;
 
     private CommentRemover(CommentRemoverBuilder commentRemoverBuilder) {
         this.removeCSS = commentRemoverBuilder.removeCSS;
@@ -39,6 +40,7 @@ public final class CommentRemover {
         this.excludePackages = commentRemoverBuilder.excludePackages;
         this.preserveJavaClassHeaders = commentRemoverBuilder.preserveJavaClassHeaders;
         this.preserveCopyRightHeaders = commentRemoverBuilder.preserveCopyRightHeaders;
+        this.verbose = commentRemoverBuilder.verbose;
     }
 
     public boolean isRemoveCSS() {
@@ -101,6 +103,14 @@ public final class CommentRemover {
         return excludePackages;
     }
 
+    public boolean isVerbose() {
+        return verbose;
+    }
+
+    public void setVerbose(boolean verbose) {
+        this.verbose = verbose;
+    }
+
     public static class CommentRemoverBuilder {
 
         private boolean removeCSS = false;
@@ -121,6 +131,13 @@ public final class CommentRemover {
         private String startInternalPath = null;
         private String startExternalPath = null;
         private String[] excludePackages = null;
+
+        private boolean verbose = true;
+
+        public CommentRemoverBuilder verbose(boolean verbose) {
+            this.verbose = verbose;
+            return this;
+        }
 
         public CommentRemoverBuilder removeCSS(boolean removeCSS) {
             this.removeCSS = removeCSS;
@@ -205,6 +222,7 @@ public final class CommentRemover {
     @Override
     public String toString() {
         return "CommentRemover{" +
+                "verbose=" + verbose +
                 "removeCSS=" + removeCSS +
                 ", removeHTML=" + removeHTML +
                 ", removeJavaScript=" + removeJavaScript +
